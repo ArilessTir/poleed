@@ -12,7 +12,9 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    setBurger(!burger);
+    if (burger == true) {
+      setBurger(!burger);
+    }
   }, [location.pathname]);
 
   const navlist = [
