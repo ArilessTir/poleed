@@ -18,7 +18,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navlist = [
-    { name: "Evenement", direction: "/" },
+    { name: "Evenements", direction: "/" },
     { name: "Contact", direction: "/" },
     { name: "Projets", direction: "/" },
     { name: "Artistes", direction: "/artiste" }
