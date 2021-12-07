@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 const ArtistCard = ({ data }) => {
   return (
@@ -26,7 +27,7 @@ const ArtistCard = ({ data }) => {
             </p>
           </div>
 
-          <div className="bg-white w-6 h-6 rounded-md cursor-pointer"></div>
+          <BsArrowRightCircle size={32} className="text-white" />
         </div>
       </div>
     </Link>

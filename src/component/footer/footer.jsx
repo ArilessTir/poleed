@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/Logo.png";
 import NavigationLink from "../navigationLink/navigationLink";
+import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
   const navlist = [
@@ -24,9 +25,15 @@ const Footer = () => {
         })}
       </ul>
       <div className="space-x-5 py-5 flex  w-full justify-center">
-        <div className="bg-white w-6 h-6 rounded-md cursor-pointer"></div>
-        <div className="bg-white w-6 h-6 rounded-md cursor-pointer"></div>
-        <div className="bg-white w-6 h-6 rounded-md cursor-pointer"></div>
+        <a className="cursor-pointer" href="#">
+          <BsInstagram size={30} />
+        </a>
+        <a className="cursor-pointer" href="#">
+          <BsYoutube size={30} className="hover:text-red-600" />
+        </a>{" "}
+        <a className="cursor-pointer" href="#">
+          <BsSpotify size={30} className="hover:text-green-600" />
+        </a>
       </div>
       <p className="text-sm py-2 text-center w-full">
         @ Polaroid 2018 | Tout droit reservé
