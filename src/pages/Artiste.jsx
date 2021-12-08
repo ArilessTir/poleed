@@ -16,7 +16,7 @@ const Artiste = () => {
   }, []);
 
   return (
-    <body className="md:flex md:min-h-screen px-5 max-w-10xl m-auto">
+    <body className="md:flex md:min-h-screen md:px-0 p-5  max-w-10xl m-auto">
       <section
         style={{
           backgroundImage: `url('http://localhost:1337${artiste?.attributes.images.data[0].attributes.url}')`,
@@ -24,7 +24,7 @@ const Artiste = () => {
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
-        className="md:w-1/2 border-8 border-white"
+        className="md:w-1/2"
       >
         <img
           className="md:hidden"
@@ -33,7 +33,7 @@ const Artiste = () => {
         />
       </section>
 
-      <section className="md:w-1/2 md:px-8 md:py-16">
+      <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl">
         <div className="md:py-12  py-6">
           <h1 className="font-bold text-4xl uppercase">
             {artiste?.attributes.name}
@@ -54,7 +54,7 @@ const Artiste = () => {
           <p>https://www.youtube.com/watch?v=hSEZJqacL0c</p>
         </div>
 
-        <div className="space-x-5 flex justify-end p-6 ">
+        <div className="space-x-5 flex justify-start my-6  ">
           <a
             className="cursor-pointer"
             href={artiste?.attributes.instagram}
