@@ -8,7 +8,7 @@ const Artistes = () => {
   const [artiste, setArtiste] = useState([]);
   useEffect(() => {
     axios
-      .get("https://poleed.herokuapp.com/api/artistes?populate=images")
+      .get(`${process.env.REACT_APP_API_URL}/api/artistes?populate=images`)
       .then(res => {
         return res.data;
       })
@@ -98,7 +98,7 @@ const Artistes = () => {
           {" "}
           <button className=" mb-5 py-3 px-6 font-bold text-white bg-red-600 rounded-md">
             {" "}
-            Rejoins nous !{" "}
+            Rejoins nous
           </button>
         </Link>
       </div>

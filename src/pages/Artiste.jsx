@@ -9,7 +9,9 @@ const Artiste = () => {
   const [artiste, setArtiste] = useState();
   useEffect(() => {
     axios
-      .get(`https://poleed.herokuapp.com/api/artistes/${id}?populate=images`)
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/artistes/${id}?populate=images`
+      )
       .then(res => {
         return res.data;
       })
@@ -42,7 +44,7 @@ const Artiste = () => {
     <body className="md:flex md:min-h-screen md:px-0 border-8 max-w-10xl m-auto">
       <section
         style={{
-          backgroundImage: `url('https://poleed.herokuapp.com${artiste?.attributes.images.data[0].attributes.url}')`,
+          backgroundImage: `url('${process.env.REACT_APP_API_URL}${artiste?.attributes.images.data[0].attributes.url}')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center"
@@ -51,7 +53,7 @@ const Artiste = () => {
       >
         <img
           className="md:hidden"
-          src={`https://poleed.herokuapp.com${artiste?.attributes.images.data[0].attributes.url}`}
+          src={`${process.env.REACT_APP_API_URL}${artiste?.attributes.images.data[0].attributes.url}`}
           alt=""
         />
       </section>
