@@ -2,59 +2,106 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const Artiste = () => {
   const { id } = useParams();
   const [artiste, setArtiste] = useState();
   useEffect(() => {
     axios
-      .get(`http://localhost:1337/api/artistes/${id}?populate=images`)
+      .get(`https://poleed.herokuapp.com/api/artistes/${id}?populate=images`)
       .then(res => {
         return res.data;
       })
       .then(data => setArtiste(data.data));
   }, []);
 
+  const fadeInUp = {
+    initial: {
+      y: 60,
+      opacity: 0
+    },
+    animate: {
+      y: 0,
+      delay: 2,
+      opacity: 1,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
+  const stagger = {
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
   return (
-    <body className="md:flex md:min-h-screen md:px-0 p-5  max-w-10xl m-auto">
+    <body className="md:flex md:min-h-screen md:px-0 border-8 max-w-10xl m-auto">
       <section
         style={{
-          backgroundImage: `url('http://localhost:1337${artiste?.attributes.images.data[0].attributes.url}')`,
+          backgroundImage: `url('https://poleed.herokuapp.com${artiste?.attributes.images.data[0].attributes.url}')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
-        className="md:w-1/2"
+        className="md:w-1/2 "
       >
         <img
           className="md:hidden"
-          src={`http://localhost:1337${artiste?.attributes.images.data[0].attributes.url}`}
+          src={`https://poleed.herokuapp.com${artiste?.attributes.images.data[0].attributes.url}`}
           alt=""
         />
       </section>
 
       <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl">
-        <div className="md:py-12  py-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="md:py-12  py-6"
+        >
           <h1 className="font-bold text-4xl uppercase">
             {artiste?.attributes.name}
           </h1>
           <span className="h-1 bg-black w-20 block rounded-md "></span>
 
           <h2 className="uppercase">{artiste?.attributes.occupation}</h2>
-        </div>
+        </motion.div>
 
-        <p className="text-black leading-7 lg:w-2/3">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="text-black leading-7 lg:w-2/3"
+        >
           {artiste?.attributes.description}
-        </p>
+        </motion.div>
 
-        <div className="my-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="my-6"
+        >
           <h1 className="font-bold text-3xl my-5 ">Ses Projets</h1>
           <p>https://www.youtube.com/watch?v=hSEZJqacL0c</p>
           <p>https://www.youtube.com/watch?v=hSEZJqacL0c</p>
           <p>https://www.youtube.com/watch?v=hSEZJqacL0c</p>
-        </div>
+        </motion.div>
 
-        <div className="space-x-5 flex justify-start my-6  ">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="space-x-5 flex justify-start my-6  "
+        >
           <a
             className="cursor-pointer"
             href={artiste?.attributes.instagram}
@@ -79,7 +126,7 @@ const Artiste = () => {
           >
             <BsSpotify size={30} className="hover:text-green-600" />
           </a>
-        </div>
+        </motion.div>
       </section>
     </body>
   );

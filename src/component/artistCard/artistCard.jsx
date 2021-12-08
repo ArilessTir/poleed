@@ -8,7 +8,7 @@ const ArtistCard = ({ data }) => {
     <Link to={`${data.id}`}>
       <div className="group w-72 h-96 rounded-lg cursor-pointer flex items-end my-10 overflow-hidden solid border-2 relative">
         <img
-          src={`http://localhost:1337${data?.attributes.images.data[0].attributes.url}`}
+          src={`https://poleed.herokuapp.com${data?.attributes.images.data[0].attributes.url}`}
           alt=""
           className="h-full w-full absolute rounded-md transform hover:scale-110 transition-all "
         />
