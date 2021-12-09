@@ -41,7 +41,7 @@ const Artiste = () => {
     }
   };
   return (
-    <body className="md:flex md:min-h-screen md:px-0 border-8 max-w-10xl m-auto">
+    <body className="md:flex md:min-h-screen md:px-0 border-8 border-white max-w-10xl m-auto">
       <section
         style={{
           backgroundImage: `url('${process.env.REACT_APP_API_URL}${artiste?.attributes.images.data[0].attributes.url}')`,
