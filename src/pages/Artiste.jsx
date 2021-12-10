@@ -3,43 +3,16 @@ import axios from "axios";
 import { useParams } from "react-router";
 import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { get_one_artist } from "../services/artistAPI";
 
 const Artiste = () => {
   const { id } = useParams();
   const [artiste, setArtiste] = useState();
-  useEffect(() => {
-    axios
-      .get(
-        `${process.env.REACT_APP_API_URL}/api/artistes/${id}?populate=images`
-      )
-      .then(res => {
-        return res.data;
-      })
-      .then(data => setArtiste(data.data));
+  useEffect(async () => {
+    const data = await get_one_artist(id);
+    setArtiste(data);
   }, []);
 
-  const fadeInUp = {
-    initial: {
-      y: 60,
-      opacity: 0
-    },
-    animate: {
-      y: 0,
-      delay: 2,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
   return (
     <body className="md:flex md:min-h-screen md:px-0 border-8 border-white max-w-10xl m-auto">
       <section
