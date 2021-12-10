@@ -1,42 +1,27 @@
 import React, { useEffect, useState } from "react";
 import ArtistCard from "../component/artistCard/artistCard";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { get_artists } from "../services/artistAPI";
 
 const Artistes = () => {
   const [artiste, setArtiste] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/api/artistes?populate=images`)
-      .then(res => {
-        return res.data;
-      })
-      .then(data => setArtiste(data.data));
+  const [loading, setLoading] = useState(true);
+  useEffect(async () => {
+    setTimeout(() => {
+      fetchAllArtists();
+    }, 3000);
   }, []);
 
-  const fadeInUp = {
-    initial: {
-      y: 60,
-      opacity: 0
-    },
-    animate: {
-      y: 0,
-      delay: 2,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
+  const fetchAllArtists = async () => {
+    const data = await get_artists();
+    setArtiste(data);
+    setLoading(false);
   };
 
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+  // console.log(artiste);
+  // console.log("IS LOADING ? :" + loading);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -62,30 +47,32 @@ const Artistes = () => {
         }}
         className="flex flex-wrap gap-x-5 gap-3 mx-auto max-w-7xl justify-center"
       >
-        {artiste.map(item => {
-          /* <ArtistCard data={item} />;*/
-          // eslint-disable-next-line react/jsx-key
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <motion.div
-              initial={{
-                y: 60,
-                opacity: 0
-              }}
-              animate={{
-                y: 0,
-                delay: 2,
-                opacity: 1,
-                transition: {
-                  duration: 0.6
-                }
-              }}
-              exit={{ opacity: 0 }}
-            >
-              <ArtistCard data={item} />
-            </motion.div>
-          );
-        })}
+        {loading ? (
+          <h1 className="font-bold"> Loading ...</h1>
+        ) : (
+          artiste?.map(item => {
+            return (
+              // eslint-disable-next-line react/jsx-key
+              <motion.div
+                initial={{
+                  y: 60,
+                  opacity: 0
+                }}
+                animate={{
+                  y: 0,
+                  delay: 2,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.6
+                  }
+                }}
+                exit={{ opacity: 0 }}
+              >
+                <ArtistCard data={item} />
+              </motion.div>
+            );
+          })
+        )}
       </motion.div>
       <div className="w-full flex flex-col justify-center items-center">
         <p className="md:w-2/3 text-center mb-5 max-w-5xl">
