@@ -8,9 +8,7 @@ const Artistes = () => {
   const [artiste, setArtiste] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(async () => {
-    setTimeout(() => {
-      fetchAllArtists();
-    }, 3000);
+    fetchAllArtists();
   }, []);
 
   const fetchAllArtists = async () => {
