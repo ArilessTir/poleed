@@ -3,6 +3,8 @@ import { useLocation } from "react-router";
 import logo from "../../assets/images/Logo.png";
 import NavigationLink from "../navigationLink/navigationLink";
 import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
+import navlist from "../../services/navigation";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [burger, setBurger] = useState(false);
@@ -20,16 +22,13 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
-  const navlist = [
-    { name: "Evenements", direction: "/event" },
-    { name: "Contact", direction: "/" },
-    { name: "Projets", direction: "/" },
-    { name: "Artistes", direction: "/artiste" }
-  ];
   return (
     <section className="w-full bg-black ">
-      <nav className="max-w-8xl mx-auto flex items-center  px-5 py-2">
-        <img src={logo} alt="" className="max-w-full z-50" />
+      <nav className="max-w-8xl mx-auto flex items-center  px-5 py-2 max-w-screen-hd">
+        <Link to={""} className="z-50">
+          <img src={logo} alt="" className="max-w-full" />
+        </Link>
+
         <ul className="space-x-5 text-white ml-10 mt-4 hidden md:flex">
           {navlist.map(item => {
             return (

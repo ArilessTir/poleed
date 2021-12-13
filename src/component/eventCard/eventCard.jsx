@@ -1,37 +1,36 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import Concert from "../../assets/images/Concert.jpg";
+import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
-const EventCard = ({ size }) => {
+const EventCard = ({ size, data }) => {
   return (
     <div
-      className={`${size}  rounded-xl cursor-pointer
-     flex flex-col bg-black text-white p-5 relative`}
+      className={`${size} h-96 group rounded-xl cursor-pointer
+     flex flex-col bg-black text-white p-5 `}
     >
-      <div className="h-1/2">
+      {" "}
+      <div className=" max-h-1/2 overflow-hidden rounded-xl  ">
         <img
-          src={Concert}
+          src={`http://localhost:1337${data?.attributes.images.data[0].attributes.formats.large.url}`}
           alt="Concert"
-          className="rounded-xl max-h-full w-full"
+          className="rounded-xl w-full max-h-full object-cover transition-all group-hover:scale-11  "
         />
       </div>
-
-      <div>
-        <h1 className="text-2xl font-bold py-2"> Concert </h1>
-        <h1 className="font-bold pb-4"> Samedi 4 décembre 2021 </h1>
-        <p>
-          {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu risus
-          egestas velit cursus convallis sollicitudin est. Enim vulputate est id
-          quis leo pulvinar tincidunt. Cursus ut commodo in neque in tortor.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu risus
-          egestas velit cursus convallis sollicitudin est. Enim vulputate est id
-          quis leo pulvinar tincidunt. Cursus ut commodo in neque in tortor.
-          `.substring(0, 100) + ` ...`}
+      <div className=" h-1/2">
+        <h1 className="text-2xl font-bold py-2"> {data?.attributes.name} </h1>
+        <h1 className="font-bold pb-4"> {data?.attributes.date} </h1>
+        <p>{data?.attributes.description.substring(0, 100) + ` ...`}</p>
+      </div>
+      <Link
+        to={"1"}
+        className="flex justify-end items-center w-full mt-auto py-2 "
+      >
+        <p className=" group-hover:tracking-md group-hover:text-red-500 transition-all">
+          Detail
         </p>
-      </div>
-      <div>
-        <BsArrowRightShort className="absolute bottom-2 right-2 " size={38} />
-      </div>
+        <BsArrowRightShort className="group-hover:text-red-500" size={38} />
+      </Link>{" "}
     </div>
   );
 };

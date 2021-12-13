@@ -2,14 +2,9 @@ import React from "react";
 import logo from "../../assets/images/Logo.png";
 import NavigationLink from "../navigationLink/navigationLink";
 import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
+import navlist from "../../services/navigation";
 
 const Footer = () => {
-  const navlist = [
-    { name: "Evenements", direction: "/" },
-    { name: "Contact", direction: "/" },
-    { name: "Projets", direction: "/" },
-    { name: "Artistes", direction: "/artiste" }
-  ];
   return (
     <div className="w-full bg-black text-white flex flex-col justify-center place-items-start md:items-center overflow-hidden">
       <img src={logo} className="py-4" />
@@ -17,7 +12,7 @@ const Footer = () => {
         {navlist.map(item => {
           return (
             // eslint-disable-next-line react/jsx-key
-            <div className="w-screen md:w-full py-1">
+            <div className="w-screen md:w-full py-1 text-xl">
               <NavigationLink data={item} />
               <span className="h-0.5 md:bg-black bg-white w-full block"></span>
             </div>
