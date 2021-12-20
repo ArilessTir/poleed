@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import Concert from "../../assets/images/Concert.jpg";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
 const EventCard = ({ size, data }) => {
   return (
     <div
-      className={`${size} h-96 group rounded-xl cursor-pointer
-     flex flex-col bg-black text-white p-5 `}
+      className={`group rounded-xl cursor-pointer
+     flex flex-col bg-black text-white p-5 ${size}`}
     >
       {" "}
-      <div className=" max-h-1/2 overflow-hidden rounded-xl  ">
+      <div className="h-1/2 overflow-hidden rounded-xl">
         <img
           src={`http://localhost:1337${data?.attributes.images.data[0].attributes.formats.large.url}`}
           alt="Concert"
@@ -20,10 +19,12 @@ const EventCard = ({ size, data }) => {
       <div className=" h-1/2">
         <h1 className="text-2xl font-bold py-2"> {data?.attributes.name} </h1>
         <h1 className="font-bold pb-4"> {data?.attributes.date} </h1>
-        <p>{data?.attributes.description.substring(0, 100) + ` ...`}</p>
+        <p className="">
+          {data?.attributes.description.substring(0, 100) + ` ...`}
+        </p>
       </div>
       <Link
-        to={"1"}
+        to={`${data?.id}`}
         className="flex justify-end items-center w-full mt-auto py-2 "
       >
         <p className=" group-hover:tracking-md group-hover:text-red-500 transition-all">

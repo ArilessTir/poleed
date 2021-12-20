@@ -8,9 +8,7 @@ import axios from "axios";
 
 const Event = () => {
   const { id } = useParams();
-  console.log(id);
-  const [data, setData] = useState([]);
-
+  const [data, setData] = useState();
   useEffect(async () => {
     const response = await axios.get(
       `http://localhost:1337/api/events/${id}?populate=images`
@@ -18,8 +16,6 @@ const Event = () => {
     const data = await response.data;
     setData(data.data);
   }, []);
-
-  console.log(data);
 
   return (
     <body
@@ -34,8 +30,8 @@ const Event = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
           src={`http://localhost:1337${data?.attributes.images.data[0].attributes.formats.large.url}`}
-          alt="Concert"
-          className=" object-cover min-h-full mx-auto"
+          alt=""
+          className=" object-cover min-h-full mx-auto "
         />{" "}
       </section>
 

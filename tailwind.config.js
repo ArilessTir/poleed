@@ -5,13 +5,14 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        hd: "1980px"
+        hd: "1980px",
+        med: "768px"
       },
       width: {
         "192": "49rem"
       },
       height: {
-        "160": "41rem"
+        "192": "50rem"
       }
     }
   },
