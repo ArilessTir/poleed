@@ -19,11 +19,10 @@ const Event = () => {
 
   return (
     <body
-      className="border-white max-w-10xl max-w-screen-hd p-2 mx-auto
-                  md:flex md:min-h-screen md:px-0 md:border-8
-                  hd:border-0 "
+      className="border-white max-w-10xl max-w-screen-hd  mx-auto
+                  md:flex md:min-h-screen md:px-0 "
     >
-      <section className="md:w-1/2 ">
+      <section className="md:w-1/2 border-8 md:rounded-tr-lg md:rounded-bl-none  rounded-br-lg rounded-bl-lg border-black max-h-full">
         <motion.img
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -35,7 +34,7 @@ const Event = () => {
         />{" "}
       </section>
 
-      <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl">
+      <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl ">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

@@ -15,9 +15,8 @@ const Artiste = () => {
 
   return (
     <body
-      className="border-white max-w-10xl max-w-screen-2xl p-2 mx-auto
-                  md:flex md:min-h-screen md:px-0 md:border-8
-                  hd:border-0 "
+      className="border-white max-w-10xl max-w-screen-hd  mx-auto
+      md:flex md:min-h-screen md:px-0 "
     >
       <section className="md:w-1/2">
         <motion.img
