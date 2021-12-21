@@ -5,6 +5,8 @@ import Footer from "./component/footer/footer";
 import Navbar from "./component/navbar/navbar";
 import Artiste from "./pages/Artiste";
 import Artistes from "./pages/Artistes";
+import Events from "./pages/Events";
+import Event from "./pages/Event";
 import Home from "./pages/Home";
 
 const App = () => {
@@ -15,9 +17,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Home />} />
-          <Route path="/event" element={<Home />} />
+          <Route path="/event" element={<Events />} />
           <Route path="/artiste" element={<Artistes />} />
           <Route path="/artiste/:id" element={<Artiste />} />
+          <Route path="/event/:id" element={<Event />} />
         </Routes>
         <Footer />
       </AnimatePresence>
