@@ -8,6 +8,7 @@ import Artistes from "./pages/Artistes";
 import Events from "./pages/Events";
 import Event from "./pages/Event";
 import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/event" element={<Events />} />
           <Route path="/artiste" element={<Artistes />} />
           <Route path="/artiste/:id" element={<Artiste />} />
