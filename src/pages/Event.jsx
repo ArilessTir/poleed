@@ -22,17 +22,19 @@ const Event = () => {
       className="border-white max-w-10xl max-w-screen-hd  mx-auto
                   md:flex md:min-h-screen md:px-0 "
     >
-      <section className="md:w-1/2 border-8 md:rounded-tr-lg md:rounded-bl-none  rounded-br-lg rounded-bl-lg border-black max-h-full">
-        <motion.img
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
-          src={`http://localhost:1337${data?.attributes.images.data[0].attributes.formats.large.url}`}
-          alt=""
-          className=" object-cover min-h-full mx-auto "
-        />{" "}
-      </section>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        className="md:w-1/2 md:h-auto h-96"
+        style={{
+          backgroundImage: `url(${process.env.REACT_APP_API_URL}${data?.attributes.images.data[0].attributes.url})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      ></motion.div>
 
       <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl ">
         <motion.div

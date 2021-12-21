@@ -18,17 +18,19 @@ const Artiste = () => {
       className="border-white max-w-10xl max-w-screen-hd  mx-auto
       md:flex md:min-h-screen md:px-0 "
     >
-      <section className="md:w-1/2">
-        <motion.img
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
-          className="object-cover min-h-full mx-auto"
-          src={`${process.env.REACT_APP_API_URL}${artiste?.attributes.images.data[0].attributes.url}`}
-          alt=""
-        />
-      </section>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        className="md:w-1/2 md:h-auto h-96"
+        style={{
+          backgroundImage: `url(${process.env.REACT_APP_API_URL}${artiste?.attributes.images.data[0].attributes.url})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      ></motion.div>
 
       <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl">
         <motion.div
