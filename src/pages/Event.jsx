@@ -20,7 +20,7 @@ const Event = () => {
   return (
     <body
       className="border-white max-w-10xl max-w-screen-hd  mx-auto
-                  md:flex md:min-h-screen md:px-0 "
+                  md:flex md:min-h-screen md:px-0"
     >
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -36,7 +36,7 @@ const Event = () => {
         }}
       ></motion.div>
 
-      <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl ">
+      <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

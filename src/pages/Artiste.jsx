@@ -32,7 +32,7 @@ const Artiste = () => {
         }}
       ></motion.div>
 
-      <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl">
+      <section className="md:w-1/2 md:px-8 md:py-16 max-w-5xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
