@@ -1,6 +1,6 @@
 const navlist = [
   { name: "Evenements", direction: "/event" },
-  { name: "Contact", direction: "/" },
+  { name: "Contact", direction: "/contact" },
   { name: "Projets", direction: "/" },
   { name: "Artistes", direction: "/artiste" }
 ];
