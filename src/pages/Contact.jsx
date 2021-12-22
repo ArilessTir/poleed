@@ -71,7 +71,7 @@ const Contact = () => {
         <div className="flex flex-col">
           <label className="text-md font-bold">Message</label>
           <textarea
-            className="border-2 rounded-md pl-2"
+            className="border-2 rounded-md pl-2 md:w-2/3"
             name="message"
             id=""
             cols="30"
