@@ -14,9 +14,9 @@ const Artiste = () => {
   }, []);
 
   return (
-    <body
+    <section
       className="border-white max-w-10xl max-w-screen-hd  mx-auto
-      md:flex md:min-h-screen md:px-0 "
+      md:flex md:min-h-screen md:px-0 mt-20"
     >
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -104,7 +104,7 @@ const Artiste = () => {
           </a>
         </motion.div>
       </section>
-    </body>
+    </section>
   );
 };
 

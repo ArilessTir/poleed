@@ -13,7 +13,7 @@ const Footer = () => {
           return (
             // eslint-disable-next-line react/jsx-key
             <div className="w-screen md:w-full py-1 text-xl">
-              <NavigationLink data={item} />
+              <NavigationLink data={item} key={item.id} />
               <span className="h-0.5 md:bg-black bg-white w-full block"></span>
             </div>
           );

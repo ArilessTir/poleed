@@ -3,22 +3,21 @@ import ArtistCard from "../component/artistCard/artistCard";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { get_artists } from "../services/artistAPI";
+import ArtistCardSkeleton from "../component/artistCardSkeleton/artistCardSkeleton";
 
 const Artistes = () => {
   const [artiste, setArtiste] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const tab = [...Array(3).keys()];
+
   useEffect(async () => {
     fetchAllArtists();
   }, []);
 
   const fetchAllArtists = async () => {
-    const data = await get_artists();
+    const data = await get_artists(setIsLoading);
     setArtiste(data);
-    setLoading(false);
   };
-
-  // console.log(artiste);
-  // console.log("IS LOADING ? :" + loading);
 
   return (
     <motion.div
@@ -26,7 +25,7 @@ const Artistes = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, delay: 2 }}
       transition={{ duration: 1 }}
-      className="mx-5"
+      className="mx-5 mt-20"
     >
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -45,32 +44,51 @@ const Artistes = () => {
         }}
         className="flex flex-wrap gap-x-5 gap-3 mx-auto max-w-7xl justify-center"
       >
-        {loading ? (
-          <h1 className="font-bold"> Loading ...</h1>
-        ) : (
-          artiste?.map(item => {
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <motion.div
-                initial={{
-                  y: 60,
-                  opacity: 0
-                }}
-                animate={{
-                  y: 0,
-                  delay: 2,
-                  opacity: 1,
-                  transition: {
-                    duration: 0.6
-                  }
-                }}
-                exit={{ opacity: 0 }}
-              >
-                <ArtistCard data={item} />
-              </motion.div>
-            );
-          })
-        )}
+        {isLoading
+          ? tab.map(item => {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{
+                    y: 60,
+                    opacity: 0
+                  }}
+                  animate={{
+                    y: 0,
+                    delay: 2,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.6
+                    }
+                  }}
+                  exit={{ opacity: 0 }}
+                >
+                  <ArtistCardSkeleton key={item} />
+                </motion.div>
+              );
+            })
+          : artiste?.map(item => {
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{
+                    y: 60,
+                    opacity: 0
+                  }}
+                  animate={{
+                    y: 0,
+                    delay: 2,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.6
+                    }
+                  }}
+                  exit={{ opacity: 0 }}
+                >
+                  <ArtistCard data={item} key={item.id} />
+                </motion.div>
+              );
+            })}
       </motion.div>
       <div className="w-full flex flex-col justify-center items-center">
         <p className="md:w-2/3 text-center mb-5 max-w-5xl">
