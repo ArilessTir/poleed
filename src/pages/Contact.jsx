@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useState } from "react";
 import Loca from "../assets/images/Localisation.png";
 import { BsTelephoneFill } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
@@ -21,7 +20,6 @@ const Contact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(data);
   };
 
   return (
@@ -90,7 +88,9 @@ const Contact = () => {
       </form>
 
       <section className="py-4 md:flex items-center justify-start md:space-x-10">
-        <div className=" md:pl-5">{/* <img src={Loca} alt="" /> */}</div>
+        <div className=" md:pl-5">
+          <img src={Loca} alt="" />
+        </div>
 
         <div className=" h-72 w-0.5 transform  bg-gray-200 md:block hidden"></div>
 
