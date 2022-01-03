@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./component/footer/footer";
 import Navbar from "./component/navbar/navbar";
 import Artiste from "./pages/Artiste";
@@ -9,10 +9,12 @@ import Events from "./pages/Events";
 import Event from "./pages/Event";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./services/scrollTop";
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AnimatePresence exitBeforeEnter>
         <Navbar />
         <Routes>
