@@ -1,26 +1,21 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Concert from "../assets/images/Concert.jpg";
 import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
-import axios from "axios";
-
+import { get_one_event } from "../services/eventAPI";
 const Event = () => {
   const { id } = useParams();
   const [data, setData] = useState();
   useEffect(async () => {
-    const response = await axios.get(
-      `http://localhost:1337/api/events/${id}?populate=images`
-    );
-    const data = await response.data;
-    setData(data.data);
+    const data = await get_one_event(id);
+    setData(data);
   }, []);
 
   return (
-    <body
+    <section
       className="border-white max-w-10xl max-w-screen-hd  mx-auto
-                  md:flex md:min-h-screen md:px-0"
+                  md:flex md:min-h-screen md:px-0 mt-20"
     >
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -95,7 +90,7 @@ const Event = () => {
           </a>
         </motion.div>
       </section>
-    </body>
+    </section>
   );
 };
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-async function get_artists(loading) {
+async function get_events(loading) {
   try {
     let response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/artistes?populate=images`
+      `${process.env.REACT_APP_API_URL}/api/events?populate=images`
     );
     let data = await response.data;
     loading(false);
@@ -13,13 +13,13 @@ async function get_artists(loading) {
   }
 }
 
-async function get_one_artist(id) {
+async function get_one_event(id) {
   let response = await axios.get(
-    `${process.env.REACT_APP_API_URL}/api/artistes/${id}?populate=images`
+    `${process.env.REACT_APP_API_URL}/api/events/${id}?populate=images`
   );
   let data = await response.data;
 
   return data.data;
 }
 
-export { get_artists, get_one_artist };
+export { get_events, get_one_event };

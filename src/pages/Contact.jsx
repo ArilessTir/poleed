@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <body className="max-w-screen-hd mx-auto">
+    <body className="max-w-screen-hd mx-auto mt-20">
       <h1 className="text-center py-10 font-bold text-4xl">Contact</h1>
       <p className=" max-w-screen-2xl mx-auto text-center px-5">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis,
@@ -71,7 +71,7 @@ const Contact = () => {
         <div className="flex flex-col">
           <label className="text-md font-bold">Message</label>
           <textarea
-            className="border-2 rounded-md pl-2 md:w-2/3"
+            className="border-2 rounded-md pl-2"
             name="message"
             id=""
             cols="30"

@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <section className="w-full bg-black ">
+    <section className="w-full bg-black fixed z-50">
       <nav className="max-w-8xl mx-auto flex items-center  px-5 py-2 max-w-screen-hd">
         <Link to={""} className="z-50">
           <img src={logo} alt="" className="max-w-full" />
@@ -95,10 +95,7 @@ const Navbar = () => {
           <div className="h-screen">
             <ul className="flex flex-col space-y-12 text-left text-white mt-40 text-xl uppercase ">
               {navlist.map(item => {
-                return (
-                  // eslint-disable-next-line react/jsx-key
-                  <NavigationLink data={item} />
-                );
+                return <NavigationLink data={item} key={item.id} />;
               })}
             </ul>
             <span className="h-0.5 mr-auto my-20 bg-white w-full block"></span>
