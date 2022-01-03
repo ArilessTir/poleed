@@ -90,9 +90,7 @@ const Contact = () => {
       </form>
 
       <section className="py-4 md:flex items-center justify-start md:space-x-10">
-        <div className=" md:pl-5">
-          <img src={Loca} alt="" />
-        </div>
+        <div className=" md:pl-5">{/* <img src={Loca} alt="" /> */}</div>
 
         <div className=" h-72 w-0.5 transform  bg-gray-200 md:block hidden"></div>
 
