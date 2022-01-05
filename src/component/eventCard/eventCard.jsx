@@ -6,7 +6,7 @@ const EventCard = ({ size, data }) => {
   return (
     <div
       className={`group rounded-xl cursor-pointer
-     flex flex-col bg-black text-white p-5 ${size}`}
+     flex flex-col bg-gray-900 text-white p-5 ${size}`}
     >
       {" "}
       <div className="h-1/2 overflow-hidden rounded-xl">

@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const EventCardSkeleton = () => {
+const EventCardSkeleton = ({ width }) => {
   return (
     <div
-      className="group rounded-xl cursor-pointer
-      bg-black text-white p-5 h-96"
+      className={`rounded-xl cursor-pointer
+      bg-black text-white p-5 h-96 ${width}`}
     >
       <div className="flex flex-col gap-4 w-full h-full animate-pulse">
         <div className="h-1/2 bg-gray-400 rounded-md"></div>

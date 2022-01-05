@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   return (
-    <section className="w-full bg-black fixed z-50">
+    <section className="w-full bg-gray-900 fixed z-50">
       <nav className="max-w-8xl mx-auto flex items-center  px-5 py-2 max-w-screen-hd">
         <Link to={""} className="z-50">
           <img src={logo} alt="" className="max-w-full" />
@@ -31,10 +31,7 @@ const Navbar = () => {
 
         <ul className="space-x-5 text-white ml-10 mt-4 hidden md:flex">
           {navlist.map(item => {
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <NavigationLink data={item} />
-            );
+            return <NavigationLink data={item} key={item.id} />;
           })}
         </ul>
         <div className="space-x-5 ml-auto mt-4 hidden md:flex">
@@ -88,8 +85,8 @@ const Navbar = () => {
         <div
           className={
             burger
-              ? "md:hidden fixed flex flex-col overflow-y-scroll bg-black top-0 right-0 min-h-screen w-full transition-all duration-700 z-40 px-10"
-              : "bg-black top-0 -right-full overflow-y-scroll w-full transition-all min-h-screen absolute z-40 duration-700 "
+              ? "md:hidden fixed flex flex-col overflow-y-scroll bg-gray-900 top-0 right-0 min-h-screen w-full transition-all duration-700 z-40 px-10"
+              : "bg-gray-900  top-0 -right-full overflow-y-scroll w-full transition-all min-h-screen absolute z-40 duration-700 "
           }
         >
           <div className="h-screen">

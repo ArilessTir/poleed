@@ -6,7 +6,7 @@ import navlist from "../../services/navigation";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-black text-white flex flex-col justify-center place-items-start md:items-center overflow-hidden">
+    <div className="w-full bg-gray-900 text-white flex flex-col justify-center place-items-start md:items-center overflow-hidden">
       <img src={logo} className="py-4" />
       <ul className=" text-white py-5 space-y-3 flex text-3xl flex-col md:flex-row md:space-x-12 md:text-lg md:space-y-0 ">
         {navlist.map(item => {

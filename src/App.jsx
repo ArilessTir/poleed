@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
-import React, { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./component/footer/footer";
 import Navbar from "./component/navbar/navbar";
 import Artiste from "./pages/Artiste";
