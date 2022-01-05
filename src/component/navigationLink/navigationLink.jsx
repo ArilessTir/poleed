@@ -1,15 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavigationLink = ({ data }) => {
   return (
-    <Link
+    <NavLink
       to={`${data.direction}`}
-      className=" hover:text-red-600 transition-all cursor-pointer"
+      className={navdata =>
+        navdata.isActive ? "font-bold" : " hover:text-red-600 transition"
+      }
     >
       {data.name}
-    </Link>
+    </NavLink>
   );
 };
 
