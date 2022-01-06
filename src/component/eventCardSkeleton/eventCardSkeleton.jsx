@@ -4,8 +4,8 @@ import React from "react";
 const EventCardSkeleton = ({ width }) => {
   return (
     <div
-      className={`rounded-xl cursor-pointer
-      bg-black text-white p-5 h-96 ${width}`}
+      className={` cursor-pointer
+      bg-gray-900 text-white p-5 h-96 ${width}`}
     >
       <div className="flex flex-col gap-4 w-full h-full animate-pulse">
         <div className="h-1/2 bg-gray-400 rounded-md"></div>

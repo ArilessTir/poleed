@@ -12,6 +12,9 @@ module.exports = {
       },
       height: {
         "192": "50rem"
+      },
+      fontFamily: {
+        Bebas: ["Bebas Neue", "cursive"]
       }
     }
   },
