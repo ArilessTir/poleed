@@ -4,7 +4,7 @@ import React from "react";
 const TeamCard = ({ img, name, job }) => {
   return (
     <div className="group flex flex-col">
-      <div className="h-96 w-96 bg-gray-400 overflow-hidden">
+      <div className="h-80 w-80 bg-gray-400 overflow-hidden md:h-96 md:w-96">
         <img
           src={img}
           alt=""
