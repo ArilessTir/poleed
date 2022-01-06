@@ -9,7 +9,7 @@ const EventCard = ({ size, data }) => {
      flex flex-col bg-gray-900 text-white p-5 ${size}`}
     >
       {" "}
-      <div className="h-1/2 overflow-hidden rounded-xl">
+      <div className="h-1/2 overflow-hidden">
         <img
           src={`http://localhost:1337${data?.attributes.images.data[0].attributes.formats.large.url}`}
           alt="Concert"
