@@ -12,7 +12,11 @@ import EventCard from "../component/eventCard/eventCard";
 import TeamCard from "../component/teamCard/teamCard";
 
 import { get_events } from "../services/eventAPI";
-import { BsArrowRightShort, BsChevronCompactRight } from "react-icons/bs";
+import {
+  BsArrowRightShort,
+  BsChevronCompactRight,
+  BsChevronCompactLeft
+} from "react-icons/bs";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -146,23 +150,31 @@ const Home = () => {
         </section>
       </section>
 
-      <section className="my-10 px-10 ">
+      <section className="my-10 px-10  relative">
         <h1 className="sm:text-7xl text-5xl font-bold max-w-screen-hd mx-auto my-10">
           {" "}
           Notre Equipe
         </h1>
+        <BsChevronCompactRight
+          className="md:hidden absolute  top-1/2  right-10 transform translate-x-1/2 translate-y-1/2 cursor-pointer z-10"
+          size={50}
+          onClick={() => {
+            const sec = document.getElementById("section_team");
+            sec.scrollBy(320, 0);
+          }}
+        />
+        <BsChevronCompactLeft
+          className="md:hidden absolute top-1/2  -left-5 transform translate-x-1/2 translate-y-1/2 cursor-pointer z-10"
+          size={50}
+          onClick={() => {
+            const sec = document.getElementById("section_team");
+            sec.scrollBy(-320, 0);
+          }}
+        />
         <section
           id="section_team"
-          className="flex w-full gap-5 overflow-x-scroll lg:justify-center relative"
+          className="flex w-full gap-5 overflow-x-scroll lg:justify-center"
         >
-          {/* <BsChevronCompactRight
-            className="sticky bg-red-600 right-0"
-            size={50}
-            onClick={() => {
-              const sec = document.getElementById("section_team");
-              sec.scrollBy(320, 0);
-            }}
-          /> */}
           <TeamCard name={"Ilyes Bensalem"} job={"Président"} img={team3} />
           <TeamCard name={"Denis Moore"} job={"Tresorier"} img={team2} />
           <TeamCard name={"Un mec super"} job={"job"} img={team1} />
