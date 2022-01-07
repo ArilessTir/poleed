@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <section className="font-Bebas">
-      <section className="h-screen bg-gray-900 flex md:px-20 pl-5">
+      <section className="h-screen bg-gray-900 flex md:pl-20 pl-5">
         <div className="space-y-4 my-auto ">
           <div className="flex items-center space-x-2">
             <span className="w-10 h-1 bg-white"></span>
@@ -77,43 +77,71 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="my-10 px-10  ">
+      <section className="my-10 px-10 relative ">
         <h1 className="sm:text-7xl text-5xl font-bold max-w-screen-hd mx-auto my-10">
           {" "}
           Au programme{" "}
         </h1>
-        <section className="mx-auto max-w-screen-hd mx-autospace-y-10 md:space-y-0">
-          <section className=" mx-auto space-y-10md:space-y-0 ">
-            {isLoading ? (
-              <div className="md:pr-16 flex flex-wrap w-full gap-5 justify-center ">
-                {tab.map(item => {
-                  return <EventCardSkeleton width={"w-96"} key={item} />;
-                })}
-              </div>
-            ) : (
-              <div className="md:pr-16 flex flex-wrap w-full gap-5 justify-center ">
-                {data.slice(0, 3).map(item => {
-                  return (
-                    <EventCard data={item} size={"h-96 w-96"} key={item.id} />
-                  );
-                })}
-              </div>
-            )}
-            <div className="text-xl flex flex-col justify-center items-center space-y-4 text-center">
-              <p className="font-bold mt-5">
-                Poleed organise plusieurs évènements au cours de l’année.
-                Concerts, ateliers, sessions studio, entre autres...{" "}
-              </p>
-              <Link
-                to={"event"}
-                className="text-red-600 flex items-center mx-auto md:mx-0 hover:text-red-700"
-              >
-                <p className=" text-lg "> Voir tous nos evenements</p>
-                <BsArrowRightShort size={38} />
-              </Link>
-            </div>
+        <BsChevronCompactRight
+          className="md:hidden text-gray-300 absolute top-1/2  right-6 transform translate-x-1/2 -translate-y-3/4 cursor-pointer z-10"
+          size={50}
+          onClick={() => {
+            const sec = document.getElementById("section_prgm");
+            sec.scrollBy(320, 0);
+          }}
+        />
+        <BsChevronCompactLeft
+          className="md:hidden text-gray-300 absolute top-1/2 -left-6 transform translate-x-1/2 -translate-y-3/4 cursor-pointer z-10"
+          size={50}
+          onClick={() => {
+            const sec = document.getElementById("section_prgm");
+            sec.scrollBy(-320, 0);
+          }}
+        />
+        {isLoading ? (
+          <section
+            id="section_prgm"
+            className="flex w-full gap-5 overflow-x-scroll overflow-y-hidden lg:justify-center h-full"
+          >
+            {tab.map(item => {
+              return (
+                <div key={item}>
+                  <EventCardSkeleton width={"w-80"} />
+                </div>
+              );
+            })}
           </section>
-        </section>
+        ) : (
+          <section
+            id="section_prgm"
+            className="flex w-full gap-5 overflow-x-scroll overflow-y-hidden lg:justify-center h-full"
+          >
+            {data.slice(0, 3).map(item => {
+              return (
+                <div key={item.id}>
+                  <EventCard
+                    path={"event/"}
+                    data={item}
+                    size={"md:h-96 md:w-96 min-h-80 w-80"}
+                  />
+                </div>
+              );
+            })}
+          </section>
+        )}
+        <div className="text-xl flex flex-col justify-center items-center space-y-4 text-center">
+          <p className="font-bold mt-5">
+            Poleed organise plusieurs évènements au cours de l’année. Concerts,
+            ateliers, sessions studio, entre autres...{" "}
+          </p>
+          <Link
+            to={"event"}
+            className="text-red-600 flex items-center mx-auto md:mx-0 hover:text-red-700"
+          >
+            <p className=" text-lg "> Voir tous nos evenements</p>
+            <BsArrowRightShort size={38} />
+          </Link>
+        </div>
       </section>
 
       <section className="my-10 px-10">
@@ -156,7 +184,7 @@ const Home = () => {
           Notre Equipe
         </h1>
         <BsChevronCompactRight
-          className="md:hidden absolute  top-1/2  right-10 transform translate-x-1/2 translate-y-1/2 cursor-pointer z-10"
+          className="md:hidden text-gray-300 absolute top-1/2  right-6 transform translate-x-1/2 translate-y-1/2 cursor-pointer z-10"
           size={50}
           onClick={() => {
             const sec = document.getElementById("section_team");
@@ -164,7 +192,7 @@ const Home = () => {
           }}
         />
         <BsChevronCompactLeft
-          className="md:hidden absolute top-1/2  -left-5 transform translate-x-1/2 translate-y-1/2 cursor-pointer z-10"
+          className="md:hidden text-gray-300 absolute top-1/2  -left-6 transform translate-x-1/2 translate-y-1/2 cursor-pointer z-10"
           size={50}
           onClick={() => {
             const sec = document.getElementById("section_team");
@@ -211,3 +239,44 @@ const Home = () => {
 };
 
 export default Home;
+
+{
+  /* <section className="my-10 px-10  ">
+<h1 className="sm:text-7xl text-5xl font-bold max-w-screen-hd mx-auto my-10">
+  {" "}
+  Au programme{" "}
+</h1>
+<section className="mx-auto max-w-screen-hd mx-autospace-y-10 md:space-y-0">
+  <section className=" mx-auto space-y-10md:space-y-0 ">
+    {isLoading ? (
+      <div className="md:pr-16 flex flex-wrap w-full gap-5 justify-center ">
+        {tab.map(item => {
+          return <EventCardSkeleton width={"w-96"} key={item} />;
+        })}
+      </div>
+    ) : (
+      <div className="md:pr-16 flex flex-wrap w-full gap-5 justify-center ">
+        {data.slice(0, 3).map(item => {
+          return (
+            <EventCard data={item} size={"h-96 w-96"} key={item.id} />
+          );
+        })}
+      </div>
+    )}
+    <div className="text-xl flex flex-col justify-center items-center space-y-4 text-center">
+      <p className="font-bold mt-5">
+        Poleed organise plusieurs évènements au cours de l’année.
+        Concerts, ateliers, sessions studio, entre autres...{" "}
+      </p>
+      <Link
+        to={"event"}
+        className="text-red-600 flex items-center mx-auto md:mx-0 hover:text-red-700"
+      >
+        <p className=" text-lg "> Voir tous nos evenements</p>
+        <BsArrowRightShort size={38} />
+      </Link>
+    </div>
+  </section>
+</section>
+</section> */
+}
