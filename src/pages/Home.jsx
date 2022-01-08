@@ -87,7 +87,7 @@ const Home = () => {
           size={50}
           onClick={() => {
             const sec = document.getElementById("section_prgm");
-            sec.scrollBy(320, 0);
+            sec.scrollBy({ left: 150, behavior: "smooth" });
           }}
         />
         <BsChevronCompactLeft
@@ -95,18 +95,18 @@ const Home = () => {
           size={50}
           onClick={() => {
             const sec = document.getElementById("section_prgm");
-            sec.scrollBy(-320, 0);
+            sec.scrollBy({ left: -150, behavior: "smooth" });
           }}
         />
         {isLoading ? (
           <section
             id="section_prgm"
-            className="flex w-full gap-5 overflow-x-scroll overflow-y-hidden lg:justify-center h-full"
+            className="flex  w-full gap-5 overflow-x-scroll overflow-y-hidden lg:justify-center h-full"
           >
             {tab.map(item => {
               return (
                 <div key={item}>
-                  <EventCardSkeleton width={"w-80"} />
+                  <EventCardSkeleton width={"w-72 "} />
                 </div>
               );
             })}
@@ -188,7 +188,7 @@ const Home = () => {
           size={50}
           onClick={() => {
             const sec = document.getElementById("section_team");
-            sec.scrollBy(320, 0);
+            sec.scrollBy({ left: 150, behavior: "smooth" });
           }}
         />
         <BsChevronCompactLeft
@@ -196,7 +196,7 @@ const Home = () => {
           size={50}
           onClick={() => {
             const sec = document.getElementById("section_team");
-            sec.scrollBy(-320, 0);
+            sec.scrollBy({ left: -150, behavior: "smooth" });
           }}
         />
         <section
