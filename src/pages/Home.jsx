@@ -209,7 +209,7 @@ const Home = () => {
         </section>
       </section>
 
-      <section className="my-10 px-10 flex flex-1 flex-col mx-auto max-w-7xl">
+      <section className="my-10 px-10 flex flex-col mx-auto max-w-7xl">
         <div className=" space-y-5 my-10 ">
           <h1 className=" text-5xl mb-2">
             Prêt à devenir <br /> Poleed ?
