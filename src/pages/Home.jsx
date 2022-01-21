@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <section className="font-Bebas">
-      <section className="h-screen bg-gray-900 flex md:pl-20 pl-5">
+      <section className="h-screen bg-gray-900 flex md:pl-20 pl-5 ">
         <div className="space-y-4 my-auto ">
           <div className="flex items-center space-x-2">
             <span className="w-10 h-1 bg-white"></span>
@@ -55,7 +55,7 @@ const Home = () => {
 
         <div className="w-1/2 my-auto hidden"></div>
       </section>
-      <section id="About" className="py-10 px-10 max-w-screen-hd mx-auto">
+      <section id="About" className="py-10 px-10 max-w-screen-2xl mx-auto">
         <div className="flex  md:flex-row-reverse flex-col-reverse gap-8 justify-center ">
           <div className="md:w-1/2 w-full ">
             <img
@@ -69,19 +69,16 @@ const Home = () => {
             </p>
           </div>
           <div className="md:w-1/2 ">
-            <h1 className="sm:text-7xl text-5xl font-bold text-center md:text-left">
-              A propos <br /> de nous
+            <h1 className="sm:text-6xl text-4xl font-bold text-center md:text-left">
+              A propos de nous
             </h1>
             <img src={home_about2} alt="" className="max-w-full" />
           </div>
         </div>
       </section>
 
-      <section className="my-10 px-10 relative ">
-        <h1 className="sm:text-7xl text-5xl font-bold max-w-screen-hd mx-auto my-10">
-          {" "}
-          Au programme{" "}
-        </h1>
+      <section className="my-10 px-10 relative max-w-screen-2xl mx-auto">
+        <h1 className="sm:text-6xl text-4xl font-bold my-10"> Au programme </h1>
         <BsChevronCompactRight
           className="md:hidden text-gray-300 absolute top-1/2  right-6 transform translate-x-1/2 -translate-y-3/4 cursor-pointer z-10"
           size={50}
@@ -106,7 +103,7 @@ const Home = () => {
             {tab.map(item => {
               return (
                 <div key={item}>
-                  <EventCardSkeleton width={"w-72 "} />
+                  <EventCardSkeleton width={"w-80"} />
                 </div>
               );
             })}
@@ -114,7 +111,7 @@ const Home = () => {
         ) : (
           <section
             id="section_prgm"
-            className="flex w-full gap-5 overflow-x-scroll overflow-y-hidden lg:justify-center h-full"
+            className="flex w-full gap-5 overflow-x-scroll overflow-y-hidden lg:justify-center h-full "
           >
             {data.slice(0, 3).map(item => {
               return (
@@ -122,7 +119,7 @@ const Home = () => {
                   <EventCard
                     path={"event/"}
                     data={item}
-                    size={"md:h-96 md:w-96 min-h-80 w-80"}
+                    size={"md:h-96 md:w-80 h-96 w-80"}
                   />
                 </div>
               );
@@ -144,8 +141,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="my-10 px-10">
-        <h1 className="sm:text-7xl text-5xl font-bold max-w-screen-hd mx-auto my-10">
+      <section className="my-10 px-10 max-w-screen-2xl mx-auto">
+        <h1 className="sm:text-6xl text-4xl font-bold max-w-screen-hd mx-auto my-10">
           {" "}
           Nos services
         </h1>
@@ -178,8 +175,8 @@ const Home = () => {
         </section>
       </section>
 
-      <section className="my-10 px-10  relative">
-        <h1 className="sm:text-7xl text-5xl font-bold max-w-screen-hd mx-auto my-10">
+      <section className="my-10 px-10 relative max-w-screen-2xl mx-auto">
+        <h1 className="sm:text-6xl text-4xl font-bold max-w-screen-hd mx-auto my-10">
           {" "}
           Notre Equipe
         </h1>
@@ -209,9 +206,9 @@ const Home = () => {
         </section>
       </section>
 
-      <section className="my-10 px-10 flex flex-col mx-auto max-w-7xl">
-        <div className=" space-y-5 my-10 ">
-          <h1 className=" text-5xl mb-2">
+      <section className="my-10 px-10 flex flex-col max-w-screen-2xl mx-auto md:flex-row md:items-center">
+        <div className="my-10 md:w-1/2 lg:w-1/3">
+          <h1 className="sm:text-6xl text-4xl mb-5">
             Prêt à devenir <br /> Poleed ?
           </h1>
           <Link
@@ -222,11 +219,11 @@ const Home = () => {
             Contactes nous !{" "}
           </Link>
         </div>
-        <div className=" space-y-5 text-xl md:max-w-4xl">
+        <div className="space-y-5 text-2xl md:max-w-3xl">
           <p>
-            Notre but principale est le développement et la promotion
-            artistique. Pour cela nous suivons des artistes dans le
-            développement de leurs projets en offrant un accès à la production.{" "}
+            Notre but principale est la promotion artistique. Pour cela nous
+            suivons des artistes dans le développement de leurs projets en
+            offrant un accès à la production.{" "}
           </p>
           <p>
             On trouve notre essence dans des programmes de réussite citoyenne
