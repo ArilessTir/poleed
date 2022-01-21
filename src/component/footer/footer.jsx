@@ -11,10 +11,9 @@ const Footer = () => {
       <ul className=" text-white py-5 space-y-3 flex text-3xl flex-col md:flex-row md:space-x-12 md:text-lg md:space-y-0 ">
         {navlist.map(item => {
           return (
-            // eslint-disable-next-line react/jsx-key
-            <div className="w-screen md:w-full py-1 text-xl">
-              <NavigationLink data={item} key={item.id} />
-              <span className="h-0.5 md:bg-black bg-white w-full block"></span>
+            <div className="w-screen md:w-full py-1 text-xl" key={item.id}>
+              <NavigationLink data={item} />
+              <span className="h-0.5 md:bg-gray-900 bg-white w-full block"></span>
             </div>
           );
         })}

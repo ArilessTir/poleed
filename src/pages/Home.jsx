@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import home_about1 from "../assets/images/home_about1.jpg";
@@ -22,14 +22,15 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const tab = [...Array(3).keys()];
-  useEffect(async () => {
-    fetchAllEvent();
-  }, []);
 
   const fetchAllEvent = async () => {
     const data = await get_events(setIsLoading);
     setData(data);
   };
+
+  useEffect(async () => {
+    fetchAllEvent();
+  }, []);
 
   return (
     <section className="font-Bebas">
@@ -55,7 +56,8 @@ const Home = () => {
 
         <div className="w-1/2 my-auto hidden"></div>
       </section>
-      <section id="About" className="py-10 px-10 max-w-screen-2xl mx-auto">
+
+      <section className="py-10 px-10 max-w-screen-2xl mx-auto ">
         <div className="flex  md:flex-row-reverse flex-col-reverse gap-8 justify-center ">
           <div className="md:w-1/2 w-full ">
             <img
@@ -72,6 +74,7 @@ const Home = () => {
             <h1 className="sm:text-6xl text-4xl font-bold text-center md:text-left">
               A propos de nous
             </h1>
+
             <img src={home_about2} alt="" className="max-w-full" />
           </div>
         </div>
