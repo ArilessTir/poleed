@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const EventCardSkeleton = ({ width }) => {
+const EventCardSkeleton = ({ width, classe }) => {
   return (
     <>
-      <div className={`p-5 h-96 cursor-pointer bg-gray-900 ${width}`}>
+      <div className={`p-5 h-96 cursor-pointer bg-gray-900 ${width} ${classe}`}>
         <div className=" space-y-6 w-full h-full animate-pulse">
           <div className="h-1/2 bg-gray-400 rounded-md"></div>
           <div className="h-1/2 space-y-2 ">
