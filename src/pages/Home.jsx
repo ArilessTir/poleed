@@ -1,5 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import home_about1 from "../assets/images/home_about1.jpg";
 import home_about2 from "../assets/images/home_about2.jpg";
@@ -18,6 +20,7 @@ import {
   BsChevronCompactLeft
 } from "react-icons/bs";
 
+gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -30,24 +33,49 @@ const Home = () => {
 
   useEffect(async () => {
     fetchAllEvent();
+
+    const tl = gsap.timeline();
+    const tl_about = gsap.timeline();
+
+    tl.from("section .title", {
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: {
+        amount: 0.5
+      }
+    }).from("section .title .line", {
+      width: 0
+    });
+
+    // tl_about.from(".about .about__left", {
+    //   x: -50,
+    //   opacity: 0,
+    //   duration: 2,
+    //   scrollTrigger: {
+    //     trigger: ".about",
+    //     start: "top center +=100",
+    //     markers: true
+    //   }
+    // });
   }, []);
 
   return (
     <section className="font-Bebas">
       <section className="h-screen bg-gray-900 flex md:pl-20 pl-5 ">
-        <div className="space-y-4 my-auto ">
-          <div className="flex items-center space-x-2">
-            <span className="w-10 h-1 bg-white"></span>
+        <div className="space-y-4 my-auto">
+          <div className="title flex items-center space-x-2">
+            <span className="line w-10 h-1 bg-white"></span>
             <p className="text-white">Poleed Industry</p>
           </div>
-          <h1 className=" text-white sm:text-8xl text-7xl font-bold tracking-wide leading-tight ">
+          <h1 className="title text-white sm:text-8xl text-7xl font-bold tracking-wide leading-tight ">
             Promotion <br />
             Artistique
           </h1>
-          <p className="text-white">
+          <p className="title text-white">
             Association Roubaisienne d’accompagnement artistique et production.{" "}
           </p>
-          <Link to="contact">
+          <Link className="title" to="contact">
             <button className="mt-10 py-3 px-6 font-bold text-black bg-white rounded-md">
               Rejoins nous
             </button>
@@ -57,9 +85,9 @@ const Home = () => {
         <div className="w-1/2 my-auto hidden"></div>
       </section>
 
-      <section className="py-10 px-10 max-w-screen-2xl mx-auto ">
+      <section className="about py-10 px-10 max-w-screen-2xl mx-auto ">
         <div className="flex  md:flex-row-reverse flex-col-reverse gap-8 justify-center ">
-          <div className="md:w-1/2 w-full ">
+          <div className="about__right md:w-1/2 w-full ">
             <img
               src={home_about1}
               alt=""
@@ -70,7 +98,7 @@ const Home = () => {
               Elle est spécialisée dans l’accompagnement d’artiste.
             </p>
           </div>
-          <div className="md:w-1/2 ">
+          <div className="about__left md:w-1/2">
             <h1 className="sm:text-6xl text-4xl font-bold text-center md:text-left">
               A propos de nous
             </h1>

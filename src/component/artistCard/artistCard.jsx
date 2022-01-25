@@ -6,7 +6,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 const ArtistCard = ({ data }) => {
   return (
     <Link to={`${data.id}`}>
-      <div className="group w-72 h-96 rounded-lg cursor-pointer flex items-end my-10 overflow-hidden solid border-2 relative">
+      <div className="group w-72 h-96 rounded-lg cursor-pointer flex items-end my-10 overflow-hidden solid border-2 relative ">
         <img
           src={`${process.env.REACT_APP_API_URL}${data?.attributes.images.data[0].attributes.url}`}
           alt=""

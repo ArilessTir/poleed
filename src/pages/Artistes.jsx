@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import gsap from "gsap";
 import ArtistCard from "../component/artistCard/artistCard";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { get_artists } from "../services/artistAPI";
 import ArtistCardSkeleton from "../component/artistCardSkeleton/artistCardSkeleton";
 
@@ -12,6 +12,17 @@ const Artistes = () => {
 
   useEffect(async () => {
     fetchAllArtists();
+
+    const tl = gsap.timeline();
+
+    tl.from(".card", {
+      y: 10,
+      opacity: 0,
+      duration: 0.4,
+      stagger: {
+        amount: 0.5
+      }
+    });
   }, []);
 
   const fetchAllArtists = async () => {
@@ -20,23 +31,9 @@ const Artistes = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, delay: 2 }}
-      transition={{ duration: 1 }}
-      className="mx-5 mt-20"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-        className="text-center py-10 font-bold text-4xl"
-      >
-        Artistes
-      </motion.div>
-      <motion.div
+    <div className="mx-5 mt-20">
+      <div className="text-center py-10 font-bold text-4xl">Artistes</div>
+      <div
         animate={{
           transition: {
             staggerChildren: 0.1
@@ -47,49 +44,19 @@ const Artistes = () => {
         {isLoading
           ? tab.map(item => {
               return (
-                <motion.div
-                  key={item.id}
-                  initial={{
-                    y: 60,
-                    opacity: 0
-                  }}
-                  animate={{
-                    y: 0,
-                    delay: 2,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.6
-                    }
-                  }}
-                  exit={{ opacity: 0 }}
-                >
+                <div key={item.id} className="card">
                   <ArtistCardSkeleton key={item} />
-                </motion.div>
+                </div>
               );
             })
           : artiste?.map(item => {
               return (
-                <motion.div
-                  key={item.id}
-                  initial={{
-                    y: 60,
-                    opacity: 0
-                  }}
-                  animate={{
-                    y: 0,
-                    delay: 2,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.6
-                    }
-                  }}
-                  exit={{ opacity: 0 }}
-                >
+                <div key={item.id} className="card">
                   <ArtistCard data={item} key={item.id} />
-                </motion.div>
+                </div>
               );
             })}
-      </motion.div>
+      </div>
       <div className="w-full flex flex-col justify-center items-center">
         <p className="md:w-2/3 text-center mb-5 max-w-5xl">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -105,7 +72,7 @@ const Artistes = () => {
           </button>
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

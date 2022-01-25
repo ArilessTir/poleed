@@ -2,12 +2,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
-const EventCard = ({ size, data, path = "" }) => {
+const EventCard = ({ size, classe, data, path = "" }) => {
   return (
     <>
       <div
         className={`group  cursor-pointer
-     flex flex-col bg-gray-900 text-white p-5 ${size}`}
+     flex flex-col bg-gray-900 text-white p-5 ${size} ${classe}`}
       >
         {" "}
         <div className="h-1/2 overflow-hidden">
