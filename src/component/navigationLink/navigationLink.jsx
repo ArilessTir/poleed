@@ -2,16 +2,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const NavigationLink = ({ data }) => {
+const NavigationLink = ({ data, classe }) => {
   return (
-    <NavLink
-      to={`${data.direction}`}
-      className={navdata =>
-        navdata.isActive ? "font-bold" : " hover:text-red-600 transition"
-      }
-    >
-      {data.name}
-    </NavLink>
+    <div className={`${classe}`}>
+      <NavLink
+        to={`${data.direction}`}
+        className={navdata =>
+          navdata.isActive ? `font-bold` : `hover:text-red-600 transition `
+        }
+      >
+        {data.name}
+      </NavLink>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import gsap from "gsap";
 import { useLocation } from "react-router";
 import logo from "../../assets/images/Logo.png";
 import NavigationLink from "../navigationLink/navigationLink";
@@ -11,6 +12,15 @@ const Navbar = () => {
 
   const toggleBurger = () => {
     setBurger(!burger);
+    gsap.from(".item", {
+      x: 20,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.8,
+      stagger: {
+        amount: 0.8
+      }
+    });
   };
 
   const location = useLocation();
@@ -31,7 +41,7 @@ const Navbar = () => {
 
         <ul className="space-x-5 text-white ml-10 mt-4 hidden md:flex">
           {navlist.map(item => {
-            return <NavigationLink data={item} key={item.id} />;
+            return <NavigationLink data={item} key={item.id} id="item" />;
           })}
         </ul>
         <div className="space-x-5 ml-auto mt-4 hidden md:flex">
@@ -92,7 +102,9 @@ const Navbar = () => {
           <div className="h-screen">
             <ul className="flex flex-col space-y-12 text-left text-white mt-40 text-xl uppercase ">
               {navlist.map(item => {
-                return <NavigationLink data={item} key={item.id} />;
+                return (
+                  <NavigationLink data={item} key={item.id} classe="item" />
+                );
               })}
             </ul>
             <span className="h-0.5 mr-auto my-20 bg-white w-full block"></span>
