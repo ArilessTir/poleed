@@ -134,7 +134,7 @@ const Home = () => {
             {tab.map(item => {
               return (
                 <div key={item}>
-                  <EventCardSkeleton width={"w-80"} />
+                  <EventCardSkeleton width={"md:w-80 w-72"} />
                 </div>
               );
             })}
