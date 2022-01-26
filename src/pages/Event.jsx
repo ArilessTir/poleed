@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
 import { useParams } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import { get_one_event } from "../services/eventAPI";
 const Event = () => {
   const { id } = useParams();

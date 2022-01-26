@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router";
 import { BsInstagram, BsSpotify, BsYoutube } from "react-icons/bs";
 import { motion } from "framer-motion";
