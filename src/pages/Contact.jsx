@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Loca from "../assets/images/Localisation.png";
 import { BsTelephoneFill } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
+import ContactModal from "../component/contactModal/contactModal";
 
 const Contact = () => {
   const [data, setData] = useState({
@@ -24,6 +25,7 @@ const Contact = () => {
 
   return (
     <body className="max-w-screen-hd mx-auto mt-20">
+      <ContactModal></ContactModal>
       <h1 className="text-center py-10 font-bold text-4xl">Contact</h1>
       <p className=" max-w-screen-2xl mx-auto text-center px-5">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis,
