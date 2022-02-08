@@ -10,6 +10,7 @@ import Event from "./pages/Event";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./services/scrollTop";
+import Projects from "./pages/Project";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/artiste" element={<Artistes />} />
           <Route path="/artiste/:id" element={<Artiste />} />
           <Route path="/event/:id" element={<Event />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
       </AnimatePresence>

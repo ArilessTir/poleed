@@ -69,7 +69,7 @@ const Home = () => {
 
   return (
     <section className="font-Bebas">
-      <section className="h-screen bg-gray-900 flex mt-20 mx-auto max-w-screen-hd">
+      <section className="min-h-screen bg-gray-900 flex mt-20 mx-auto max-w-screen-hd">
         <div className="w-full space-y-10  md:w-1/2 lg:1/3 lg:pl-24 pl-5 my-auto z-30 ">
           <div className="title flex items-center space-x-2">
             <span className="line w-10 h-1 bg-white"></span>
@@ -83,7 +83,7 @@ const Home = () => {
             Association Roubaisienne d’accompagnement artistique et production.{" "}
           </p>
           <Link className="title" to="contact">
-            <button className="mt-10 py-3 px-6 font-bold text-black bg-white rounded-md">
+            <button className="mt-10 mb-2 py-3 px-6 font-bold text-black bg-white rounded-md">
               Rejoins nous
             </button>
           </Link>
