@@ -8,6 +8,7 @@ import home_about2 from "../assets/images/home_about2.jpg";
 import team1 from "../assets/images/team1.jpg";
 import team2 from "../assets/images/team2.jpg";
 import team3 from "../assets/images/team3.jpg";
+import bens from "../assets/artistes/Bensou.jpg";
 
 import EventCardSkeleton from "../component/eventCardSkeleton/eventCardSkeleton";
 import EventCard from "../component/eventCard/eventCard";
@@ -35,17 +36,23 @@ const Home = () => {
     fetchAllEvent();
 
     const tl = gsap.timeline();
-    const tl_about = gsap.timeline();
 
     tl.from("section .title", {
       y: 50,
       opacity: 0,
-      duration: 0.8,
+      duration: 1,
+      delay: 0.1,
       stagger: {
         amount: 0.5
       }
     }).from("section .title .line", {
       width: 0
+    });
+
+    gsap.from(".img", {
+      width: 0,
+      duration: 1,
+      delay: 0.2
     });
 
     // tl_about.from(".about .about__left", {
@@ -62,13 +69,13 @@ const Home = () => {
 
   return (
     <section className="font-Bebas">
-      <section className="h-screen bg-gray-900 flex md:pl-20 pl-5 ">
-        <div className="space-y-4 my-auto">
+      <section className="h-screen bg-gray-900 flex mt-20 mx-auto max-w-screen-hd">
+        <div className="w-full space-y-10  md:w-1/2 lg:1/3 lg:pl-24 pl-5 my-auto z-30 ">
           <div className="title flex items-center space-x-2">
             <span className="line w-10 h-1 bg-white"></span>
             <p className="text-white">Poleed Industry</p>
           </div>
-          <h1 className="title text-white sm:text-8xl text-7xl font-bold tracking-wide leading-tight ">
+          <h1 className="title text-white sm:text-8xl lg:text-9xl text-7xl font-bold tracking-wide leading-tight ">
             Promotion <br />
             Artistique
           </h1>
@@ -82,7 +89,46 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className="w-1/2 my-auto hidden"></div>
+        <div className="w-2/3 relative hidden md:flex md:gap-6 ">
+          <div className="lg:w-1/2 w-full flex flex-col  ">
+            <div
+              className="img my-auto"
+              style={{
+                backgroundImage: `url(${bens})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "700px",
+                width: "100%",
+                backgroundPosition: "center"
+              }}
+            ></div>
+          </div>
+
+          <div className="w-1/2 my-auto hidden flex-col gap-6 lg:flex">
+            <div
+              className="img relative"
+              style={{
+                backgroundImage: `url(${home_about2})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "335px",
+                maxWidth: "100%",
+                backgroundPosition: "center"
+              }}
+            ></div>
+            <div
+              className="img relative"
+              style={{
+                backgroundImage: `url(${home_about1})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                height: "335px",
+                maxWidth: "100%",
+                backgroundPosition: "center"
+              }}
+            ></div>
+          </div>
+        </div>
       </section>
 
       <section className="about py-10 px-10 max-w-screen-2xl mx-auto ">
@@ -240,7 +286,7 @@ const Home = () => {
       <section className="my-10 px-10 flex flex-col max-w-screen-2xl mx-auto md:flex-row md:items-center">
         <div className="my-10 md:w-1/2 lg:w-1/3">
           <h1 className="sm:text-6xl text-4xl mb-5">
-            Prêt à devenir <br /> Poleed ?
+            Prêt à devenir <br /> Poleed?
           </h1>
           <Link
             to={"contact"}
