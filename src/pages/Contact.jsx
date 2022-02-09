@@ -5,6 +5,12 @@ import { BsTelephoneFill } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import ContactModal from "../component/contactModal/contactModal";
 
+const sgMail = require("@sendgrid/mail");
+
+sgMail.setApiKey(
+  "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"
+);
+
 const Contact = () => {
   const [data, setData] = useState({
     name: "",
@@ -22,6 +28,25 @@ const Contact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    const message = {
+      to: "ariless.tir@gmail.com",
+      form: data.email,
+      subject: data.topic,
+      html: `
+      <p><strong>Name:</strong>${data.name}</p>
+      <p>${data.message}</p>
+      `
+    };
+
+    sgMail
+      .send(message)
+      .then(() => {
+        console.log("email sent");
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    console.log(data);
   };
 
   return (
