@@ -75,7 +75,7 @@ const Home = () => {
             <span className="line w-10 h-1 bg-white"></span>
             <p className="text-white">Poleed Industry</p>
           </div>
-          <h1 className="title text-white sm:text-8xl lg:text-9xl text-7xl font-bold tracking-wide leading-tight ">
+          <h1 className="title text-white sm:text-8xl md:text-9xl text-7xl font-bold tracking-wide leading-tight ">
             Promotion <br />
             Artistique
           </h1>
@@ -83,7 +83,7 @@ const Home = () => {
             Association Roubaisienne d’accompagnement artistique et production.{" "}
           </p>
           <Link className="title" to="contact">
-            <button className="mt-10 mb-2 py-3 px-6 font-bold text-black bg-white rounded-md">
+            <button className="mt-5 mb-2 py-3 px-6 font-bold text-black bg-white rounded-md">
               Rejoins nous
             </button>
           </Link>

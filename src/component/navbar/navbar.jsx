@@ -45,13 +45,28 @@ const Navbar = () => {
           })}
         </ul>
         <div className="space-x-5 ml-auto mt-4 hidden md:flex">
-          <a className="cursor-pointer" href="#">
+          <a
+            className="cursor-pointer"
+            href="https://www.instagram.com/_poleed/?hl=fr"
+            target="_blank"
+            rel="noreferrer"
+          >
             <BsInstagram size={30} className="text-white" />
           </a>
-          <a className="cursor-pointer" href="#">
+          <a
+            className="cursor-pointer"
+            href="https://www.youtube.com/results?search_query=poleed"
+            target="_blank"
+            rel="noreferrer"
+          >
             <BsYoutube size={30} className="hover:text-red-600 text-white" />
           </a>{" "}
-          <a className="cursor-pointer" href="#">
+          <a
+            className="cursor-pointer"
+            href="https://www.spotify.com/fr/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <BsSpotify size={30} className="hover:text-green-600 text-white" />
           </a>
         </div>
@@ -109,16 +124,31 @@ const Navbar = () => {
             </ul>
             <span className="h-0.5 mr-auto my-20 bg-white w-full block"></span>
             <div className="flex space-x-5 content-center my-10">
-              <a className="cursor-pointer" href="#">
+              <a
+                className="cursor-pointer"
+                href="https://www.instagram.com/_poleed/?hl=fr"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsInstagram size={30} className="text-white" />
               </a>
-              <a className="cursor-pointer" href="#">
+              <a
+                className="cursor-pointer"
+                href="https://www.youtube.com/results?search_query=poleed"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsYoutube
                   size={30}
                   className="hover:text-red-600 text-white"
                 />
               </a>{" "}
-              <a className="cursor-pointer" href="#">
+              <a
+                className="cursor-pointer"
+                href="https://www.spotify.com/fr/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BsSpotify
                   size={30}
                   className="hover:text-green-600 text-white"

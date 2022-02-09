@@ -30,6 +30,8 @@ const ContactModal = () => {
         <a
           className="content my-2 py-2 px-4 font-bold text-white bg-red-600 rounded-md cursor-pointer"
           href="https://www.instagram.com/_poleed/?hl=fr"
+          target="_blank"
+          rel="noreferrer"
         >
           {" "}
           Contacte nous
