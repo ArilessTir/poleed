@@ -15,10 +15,10 @@ const Navbar = () => {
     gsap.from(".item", {
       x: 20,
       opacity: 0,
-      duration: 0.8,
+      duration: 0.5,
       delay: 0.8,
       stagger: {
-        amount: 0.8
+        amount: 0.5
       }
     });
   };
@@ -59,7 +59,7 @@ const Navbar = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <BsYoutube size={30} className="hover:text-red-600 text-white" />
+            <BsYoutube size={30} className=" text-white" />
           </a>{" "}
           <a
             className="cursor-pointer"
@@ -67,7 +67,7 @@ const Navbar = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <BsSpotify size={30} className="hover:text-green-600 text-white" />
+            <BsSpotify size={30} className=" text-white" />
           </a>
         </div>
 
@@ -138,10 +138,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <BsYoutube
-                  size={30}
-                  className="hover:text-red-600 text-white"
-                />
+                <BsYoutube size={30} className=" text-white" />
               </a>{" "}
               <a
                 className="cursor-pointer"
@@ -149,10 +146,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <BsSpotify
-                  size={30}
-                  className="hover:text-green-600 text-white"
-                />
+                <BsSpotify size={30} className=" text-white" />
               </a>
             </div>
           </div>

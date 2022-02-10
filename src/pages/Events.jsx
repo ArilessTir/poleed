@@ -41,7 +41,7 @@ const Events = () => {
           })}
         </section>
       ) : (
-        <section className="grid auto-rows-max grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 py-10 px-16 max-w-screen-hd mx-auto ">
+        <section className="grid auto-rows-max grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 py-10 sm:px-16 mx-5 md:mx-auto max-w-screen-hd ">
           <EventCard
             classe="card"
             size={"md:col-span-2 md:row-span-2 md:p-10 md:h-192 h-96"}

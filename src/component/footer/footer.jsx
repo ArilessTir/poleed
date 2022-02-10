@@ -23,10 +23,10 @@ const Footer = () => {
           <BsInstagram size={30} />
         </a>
         <a className="cursor-pointer" href="#">
-          <BsYoutube size={30} className="hover:text-red-600" />
+          <BsYoutube size={30} className="" />
         </a>{" "}
         <a className="cursor-pointer" href="#">
-          <BsSpotify size={30} className="hover:text-green-600" />
+          <BsSpotify size={30} className="" />
         </a>
       </div>
       <p className="text-sm py-2 text-center w-full">
