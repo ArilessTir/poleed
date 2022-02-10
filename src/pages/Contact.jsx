@@ -7,9 +7,7 @@ import ContactModal from "../component/contactModal/contactModal";
 
 const sgMail = require("@sendgrid/mail");
 
-sgMail.setApiKey(
-  "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"
-);
+sgMail.setApiKey(`${process.env.MAIL_KEY}`);
 
 const Contact = () => {
   const [data, setData] = useState({
