@@ -1,4 +1,3 @@
-import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./component/footer/footer";
@@ -16,19 +15,17 @@ const App = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <AnimatePresence exitBeforeEnter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/event" element={<Events />} />
-          <Route path="/artiste" element={<Artistes />} />
-          <Route path="/artiste/:id" element={<Artiste />} />
-          <Route path="/event/:id" element={<Event />} />
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-        <Footer />
-      </AnimatePresence>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/event" element={<Events />} />
+        <Route path="/artiste" element={<Artistes />} />
+        <Route path="/artiste/:id" element={<Artiste />} />
+        <Route path="/event/:id" element={<Event />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
