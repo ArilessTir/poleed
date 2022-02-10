@@ -7,26 +7,26 @@ const EventCard = ({ size, classe, data, path = "" }) => {
     <>
       <div
         className={`group  cursor-pointer
-     flex flex-col bg-gray-900 text-white p-5 ${size} ${classe}`}
+     flex flex-col bg-gray-900 text-white px-5 ${size} ${classe}`}
       >
         {" "}
         <div className="h-1/2 overflow-hidden">
           <img
             src={`${process.env.REACT_APP_API_URL}${data?.attributes.images.data[0].attributes.formats.large.url}`}
             alt="Concert"
-            className="rounded-xl w-full max-h-full object-cover transition-all group-hover:scale-11  "
+            className=" pt-5 rounded-xl w-full max-h-full object-cover transition-all group-hover:scale-11  "
           />
         </div>
-        <div className=" h-1/2">
+        <div className=" h-1/2 overflow-hidden">
           <h1 className="text-2xl font-bold py-2"> {data?.attributes.name} </h1>
-          <h1 className="font-bold pb-4"> {data?.attributes.date} </h1>
-          <p className="">
-            {data?.attributes.description.substring(0, 100) + ` ...`}
-          </p>
+          <h1 className="font-bold pb-4">
+            {new Date(data?.attributes.date).toLocaleDateString("fr")}
+          </h1>
+          <p className="">{data?.attributes.description}</p>
         </div>
         <Link
           to={`${path}${data?.id}`}
-          className="flex justify-end items-center w-full mt-auto py-2 "
+          className="flex justify-end items-center w-full py-2 bottom-0 bg-gray-900"
         >
           <p className=" group-hover:tracking-md group-hover:text-red-500 transition-all">
             Detail

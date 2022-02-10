@@ -3,6 +3,7 @@ import gsap from "gsap";
 import EventCard from "../component/eventCard/eventCard";
 import EventCardSkeleton from "../component/eventCardSkeleton/eventCardSkeleton";
 import { get_events } from "../services/eventAPI";
+
 const Events = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +46,7 @@ const Events = () => {
             classe="card"
             size={"md:col-span-2 md:row-span-2 md:p-10 md:h-192 h-96"}
             data={data[0]}
+            lenght={200}
           />
           {data.slice(1).map(item => {
             // eslint-disable-next-line react/jsx-key
