@@ -11,3 +11,7 @@
     .scale-11 { transform:scale(1.1); }
     .tracking-md{letter-spacing:0.1em;}
 }
+
+html{
+    font-family: 'Bebas Neue',cursive;
+}

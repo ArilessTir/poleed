@@ -34,9 +34,9 @@ const Navbar = () => {
 
   return (
     <section className="w-full bg-gray-900 h-20 fixed z-50">
-      <nav className="max-w-8xl mx-auto flex items-center px-5 py-2 max-w-screen-hd">
-        <Link to={""} className="z-50">
-          <img src={logo} alt="" className="max-w-full" />
+      <nav className="max-w-8xl mx-auto flex items-center px-5 py-2 max-w-screen-hd justify-center">
+        <Link to={""} className="z-50  h-full pt-2">
+          <img src={logo} alt="" className=" w-32 h-18" />
         </Link>
 
         <ul className="space-x-5 text-white ml-10 mt-4 hidden md:flex">

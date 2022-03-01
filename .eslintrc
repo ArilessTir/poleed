@@ -7,7 +7,8 @@
     ],
     "plugins": ["prettier"],
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "react/jsx-key":"off"
     },
     "parser": "babel-eslint",
     "env": {

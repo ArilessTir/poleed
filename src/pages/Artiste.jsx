@@ -54,7 +54,7 @@ const Artiste = () => {
           <h2 className="uppercase">{artiste?.attributes.occupation}</h2>
         </div>
 
-        <div className="art text-black leading-7 lg:w-2/3">
+        <div className="art text-black leading-7 lg:w-2/3 text-lg">
           {artiste?.attributes.description}
         </div>
 

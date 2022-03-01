@@ -2,54 +2,26 @@ import React, { useState } from "react";
 
 import Loca from "../assets/images/Localisation.png";
 import { BsTelephoneFill } from "react-icons/bs";
-import { FiMail } from "react-icons/fi";
+import { FiMail, FiCopy, FiPhone, FiHome, FiInstagram } from "react-icons/fi";
 import ContactModal from "../component/contactModal/contactModal";
-
-const sgMail = require("@sendgrid/mail");
-
-sgMail.setApiKey(`${process.env.MAIL_KEY}`);
+import Notification from "../component/notification/notification";
 
 const Contact = () => {
-  const [data, setData] = useState({
-    name: "",
-    email: "",
-    topic: "",
-    message: ""
-  });
+  const [notif, setNotif] = useState(false);
 
-  const handleChange = e => {
-    e.preventDefault();
-    const key = e.currentTarget.name;
-    const value = e.currentTarget.value;
-    setData({ ...data, [key]: value });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    const message = {
-      to: "ariless.tir@gmail.com",
-      form: data.email,
-      subject: data.topic,
-      html: `
-      <p><strong>Name:</strong>${data.name}</p>
-      <p>${data.message}</p>
-      `
-    };
-
-    sgMail
-      .send(message)
-      .then(() => {
-        console.log("email sent");
-      })
-      .catch(error => {
-        console.error(error);
-      });
-    console.log(data);
+  const handleCopy = text => {
+    // navigator.clipboard.writeText(e.target.innerHTML);
+    navigator.clipboard.writeText(text);
+    setNotif(true);
+    setTimeout(() => {
+      setNotif(false);
+    }, 2000);
   };
 
   return (
     <body className="max-w-screen-hd mx-auto mt-20">
       <ContactModal></ContactModal>
+      <Notification notif={notif} />
       <h1 className="text-center py-10 font-bold text-4xl">Contact</h1>
       <p className=" max-w-screen-2xl mx-auto text-center px-5">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis,
@@ -61,77 +33,66 @@ const Contact = () => {
         molestiae necessitatibus cupiditate perspiciatis id itaque voluptatum.
       </p>
 
-      <form className=" space-y-4 py-10 px-5">
-        <div className="flex flex-col ">
-          <label className="text-md font-bold">Prenom</label>
-          <input
-            name="name"
-            className="border-2 rounded-md pl-2 md:w-96"
-            type="text"
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="text-md font-bold">Email</label>
-          <input
-            name="email"
-            className="border-2 rounded-md pl-2 md:w-96"
-            type="email"
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="text-md font-bold ">Sujet</label>
-          <input
-            name="topic"
-            className="border-2 rounded-md pl-2 md:w-96"
-            type="text"
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="text-md font-bold">Message</label>
-          <textarea
-            className="border-2 rounded-md pl-2"
-            name="message"
-            id=""
-            cols="30"
-            rows="5"
-            onChange={handleChange}
-          ></textarea>
-        </div>
-
-        <button
-          className=" mb-5 py-3 px-6 font-bold text-white bg-red-600 rounded-md"
-          onClick={handleSubmit}
-        >
-          {" "}
-          Envoyer{" "}
-        </button>
-      </form>
-
-      <section className="py-4 md:flex items-center justify-start md:space-x-10">
+      <section className="py-4 md:flex items-center justify-center md:space-x-10">
         <div className=" md:pl-5">
           <img src={Loca} alt="" />
         </div>
 
-        <div className=" h-72 w-0.5 transform  bg-gray-200 md:block hidden"></div>
-
         <div className="flex flex-col space-y-4 md:space-y-10 pt-4 px-5 justify-around ">
-          <div className="flex items-center space-x-4">
+          <div className="flex cursor-pointer items-center space-x-2">
             <FiMail size={23} />
-            <p>10 Grand Place, 59100, ROUBAIX</p>
+            <a className="text-xl" href="mailto: poleed@gmail.com">
+              poleed@gmail.com
+            </a>
+            <FiCopy
+              size={23}
+              onClick={() => {
+                handleCopy("poleed@gmail.com");
+              }}
+            />
           </div>
-          <div className="flex items-center  space-x-4">
-            <BsTelephoneFill size={23} />
-            <p>0712345678</p>
+
+          <div className="flex cursor-pointer items-center space-x-2">
+            <FiPhone size={23} />
+            <a className="text-xl" href="tel:0767722371">
+              0767722371
+            </a>
+            <FiCopy
+              size={23}
+              onClick={() => {
+                handleCopy("0767722371");
+              }}
+            />
           </div>
-          <div className="flex items-center  space-x-4">
-            <FiMail size={23} />
-            <p>poleed@gmail.com</p>
+
+          <div className="flex cursor-pointer items-center space-x-2">
+            <FiHome size={23} />
+            <a className="text-xl">3 Rue Nain, 59100 Roubaix</a>
+            <FiCopy
+              size={23}
+              onClick={() => {
+                handleCopy("3 Rue Nain, 59100 Roubaix");
+              }}
+            />
+          </div>
+
+          <div className="flex cursor-pointer items-center space-x-2">
+            <FiInstagram size={23} />
+
+            <a
+              className="text-xl"
+              href="https://www.instagram.com/_poleed/?hl=fr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              @Poleed
+            </a>
+            <FiCopy
+              size={23}
+              onClick={() => {
+                handleCopy("@Poleed");
+              }}
+            />
           </div>
         </div>
       </section>

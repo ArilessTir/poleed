@@ -8,6 +8,7 @@ const Projects = () => {
       <section className="flex flex-wrap gap-5 mx-auto max-w-7xl justify-center py-5">
         <div className="w-96 h-80 rounded-md overflow-hidden ">
           <ReactPlayer
+            controls="true"
             width="100%"
             height="100%"
             url="https://www.youtube.com/watch?v=kqQlDZmopaU"
