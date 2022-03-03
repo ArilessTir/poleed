@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import ScrollToTop from "./services/scrollTop";
 import Projects from "./pages/Project";
+import About from "./pages/About";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/artiste/:id" element={<Artiste />} />
         <Route path="/event/:id" element={<Event />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </BrowserRouter>

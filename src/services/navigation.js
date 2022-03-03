@@ -3,7 +3,7 @@ const navlist = [
   { id: 2, name: "Contact", direction: "/contact" },
   { id: 3, name: "Projets", direction: "/projects" },
   { id: 4, name: "Artistes", direction: "/artiste" },
-  { id: 5, name: "A propos", direction: "/" }
+  { id: 5, name: "A propos", direction: "/about" }
 ];
 
 export default navlist;

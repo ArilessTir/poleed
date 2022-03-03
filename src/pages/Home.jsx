@@ -152,6 +152,13 @@ const Home = () => {
             <img src={home_about2} alt="" className="max-w-full" />
           </div>
         </div>
+        <Link
+          to={"about"}
+          className="text-red-600 my-5 flex items-center justify-center mx-auto md:mx-0 hover:text-red-700"
+        >
+          <p className=" text-lg "> En savoir plus sur nous</p>
+          <BsArrowRightShort size={38} />
+        </Link>
       </section>
 
       <section className="my-10 px-10 relative max-w-screen-2xl mx-auto">
@@ -289,7 +296,7 @@ const Home = () => {
             Prêt à devenir <br /> Poleed?
           </h1>
           <Link
-            to={"contact"}
+            to={"about"}
             className="bg-gray-900 text-xl px-5 py-2 cursor-pointer text-white"
           >
             {" "}
