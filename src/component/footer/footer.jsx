@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <div className="w-full bg-gray-900 text-white flex flex-col justify-center place-items-start md:items-center overflow-hidden">
       <img src={logo} className="py-4  w-32 h-18" />
-      <ul className=" text-white py-5 space-y-3 flex text-3xl flex-col md:flex-row md:space-x-12 md:text-lg md:space-y-0 ">
+      <ul className="text-white py-5 space-y-3 flex flex-col md:flex-row md:space-x-12 md:space-y-0 ">
         {navlist.map(item => {
           return (
-            <div className="w-screen md:w-full py-1 text-xl" key={item.id}>
+            <div className="w-screen md:w-auto text-xl" key={item.id}>
               <NavigationLink data={item} />
               <span className="h-0.5 md:bg-gray-900 bg-white w-full block"></span>
             </div>
