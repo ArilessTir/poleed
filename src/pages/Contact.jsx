@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-
-import Loca from "../assets/images/Localisation.png";
-import { BsTelephoneFill } from "react-icons/bs";
 import { FiMail, FiCopy, FiPhone, FiHome, FiInstagram } from "react-icons/fi";
-import ContactModal from "../component/contactModal/contactModal";
 import Notification from "../component/notification/notification";
 
 const Contact = () => {
@@ -32,7 +28,7 @@ const Contact = () => {
         molestiae necessitatibus cupiditate perspiciatis id itaque voluptatum.
       </p>
 
-      <section className="py-4 md:flex items-center justify-center md:space-x-10 max-w-screen-2xl mx-auto">
+      <section className="py-4 items-center justify-center md:space-x-10 max-w-screen-2xl mx-auto md:flex">
         <div className=" md:pl-5 md:w-1/2">
           <iframe
             className="w-full h-80 mx-auto"
@@ -40,7 +36,7 @@ const Contact = () => {
           ></iframe>
         </div>
 
-        <div className="flex flex-col space-y-4 md:space-y-10 pt-4 px-5 justify-around md:w-auto">
+        <div className="flex flex-col space-y-4  pt-4 px-5 justify-around md:w-auto md:space-y-10">
           <h1 className="text-3xl"> Ou peux tu nous contacter? </h1>
           <div className="flex cursor-pointer items-center space-x-2 max-w-xs">
             <FiMail size={23} />
