@@ -6,7 +6,10 @@ import navlist from "../../services/navigation";
 
 const Footer = () => {
   return (
-    <div className="w-full bg-gray-900 text-white flex flex-col justify-center place-items-start md:items-center overflow-hidden">
+    <footer
+      className="w-full bg-gray-900 text-white flex flex-col justify-center
+     place-items-start md:items-center overflow-hidden"
+    >
       <img src={logo} className="py-4  w-32 h-18" />
       <ul className="text-white py-5 space-y-3 flex flex-col md:flex-row md:space-x-12 md:space-y-0 ">
         {navlist.map(item => {
@@ -32,7 +35,7 @@ const Footer = () => {
       <p className="text-sm py-2 text-center w-full">
         @ Polaroid 2018 | Tout droit reservé
       </p>
-    </div>
+    </footer>
   );
 };
 
