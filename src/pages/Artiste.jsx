@@ -10,6 +10,7 @@ const Artiste = () => {
   useEffect(async () => {
     const data = await get_one_artist(id);
     setArtiste(data);
+    console.log(data);
 
     gsap.from(".art", {
       y: 50,
@@ -60,7 +61,19 @@ const Artiste = () => {
 
         <div className="art my-6">
           <h1 className="font-bold text-3xl my-5 ">Ses Projets</h1>
-          <p> ... </p>
+          <p>
+            {" "}
+            Hyperfollow:{" "}
+            <a
+              className="hover:text-red-600"
+              href={artiste?.attributes.Hyperfollow}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              Follow me
+            </a>
+          </p>
         </div>
 
         <div className="art space-x-5 flex justify-start my-6  ">

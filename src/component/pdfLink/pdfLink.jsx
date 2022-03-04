@@ -11,6 +11,8 @@ const PdfLink = ({ link }) => {
         className="text-xl mt-auto hover:text-red-600 transition"
         href={PDF}
         download="test"
+        target="_blank"
+        rel="noreferrer"
       >
         {link.text}
       </a>
