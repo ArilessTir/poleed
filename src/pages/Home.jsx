@@ -132,7 +132,7 @@ const Home = () => {
       </section>
 
       <section className="about py-10 px-10 max-w-screen-2xl mx-auto ">
-        <div className="flex  md:flex-row-reverse flex-col-reverse gap-8 justify-center ">
+        <div className="flex md:flex-row-reverse flex-col-reverse gap-8 justify-center ">
           <div className="about__right md:w-1/2 w-full ">
             <img
               src={home_about1}
@@ -148,7 +148,6 @@ const Home = () => {
             <h1 className="sm:text-6xl text-4xl font-bold text-center md:text-left">
               A propos de nous
             </h1>
-
             <img src={home_about2} alt="" className="max-w-full" />
           </div>
         </div>
