@@ -1,32 +1,23 @@
 import React from "react";
-import ReactPlayer from "react-player";
-import ProjectCard from "../component/projectCard/projectCard";
-
+import { Outlet } from "react-router-dom";
+import NavigationLink from "../component/navigationLink/navigationLink";
 const Projects = () => {
-  const links = [
-    "https://www.youtube.com/watch?v=kqQlDZmopaU",
-    "https://www.youtube.com/watch?v=QFSS0icHEp0",
-    "https://www.youtube.com/watch?v=h-2QEiN5Z7s",
-    "https://www.youtube.com/watch?v=h-2QEiN5Z7s",
-    "https://www.youtube.com/watch?v=h-2QEiN5Z7s"
+  const nav = [
+    { direction: "", name: "Nos videos" },
+    { direction: "image", name: "Nos photos" },
+    { direction: "music", name: "Nos sons" }
   ];
+
   return (
     <div className="mx-5 mt-20">
       <div className="text-center py-10 font-bold text-4xl">Nos Projets</div>
-
-      <section className="flex flex-wrap gap-5 mx-auto max-w-7xl justify-center py-5">
-        {links.map(link => {
-          return (
-            <ProjectCard>
-              <ReactPlayer
-                controls="true"
-                width="100%"
-                height="100%"
-                url={link}
-              />
-            </ProjectCard>
-          );
+      <ul className="flex justify-center space-x-8 text-lg">
+        {nav.map(item => {
+          return <NavigationLink data={item} />;
         })}
+      </ul>
+      <section className="flex flex-wrap gap-5 mx-auto max-w-7xl justify-center py-5">
+        <Outlet />
       </section>
     </div>
   );
