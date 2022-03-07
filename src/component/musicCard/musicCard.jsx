@@ -1,13 +1,19 @@
 /* eslint-disable react/prop-types */
-
 import React from "react";
+import noimg from "../../assets/images/Noimg.png";
 
 const MusicCard = ({ data }) => {
+  const url = process.env.REACT_APP_API_URL;
+  const checkImage = data.attributes.image.data;
   return (
     <div>
       <div
         style={{
-          backgroundImage: `url(${process.env.REACT_APP_API_URL}${data?.attributes.image.data[0].attributes.url})`,
+          backgroundImage: `url(${
+            checkImage !== null
+              ? url + data?.attributes.image.data[0].attributes.url
+              : noimg
+          })`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center"
