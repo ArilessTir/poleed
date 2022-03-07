@@ -11,6 +11,9 @@ import Contact from "./pages/Contact";
 import ScrollToTop from "./services/scrollTop";
 import Projects from "./pages/Project";
 import About from "./pages/About";
+import Videos from "./component/project/videos";
+import Musics from "./component/project/music";
+import Images from "./component/project/images";
 
 const App = () => {
   return (
@@ -24,7 +27,11 @@ const App = () => {
         <Route path="/artiste" element={<Artistes />} />
         <Route path="/artiste/:id" element={<Artiste />} />
         <Route path="/event/:id" element={<Event />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<Projects />}>
+          <Route path="/projects/" element={<Videos />} />
+          <Route path="/projects/image" element={<Images />} />
+          <Route path="/projects/music" element={<Musics />} />
+        </Route>
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
