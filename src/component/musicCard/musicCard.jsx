@@ -18,7 +18,7 @@ const MusicCard = ({ data }) => {
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
-        className="h-72 w-72 bg-blue-900"
+        className="h-72 w-72 bg-white  overflow-hidden border-2"
       ></div>
       <h2>
         {data?.attributes.title} | {data?.attributes.artiste}
