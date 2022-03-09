@@ -21,7 +21,7 @@ const Musics = () => {
             return item.attributes.type === "music";
           })
           ?.map(data => {
-            return <MusicCard data={data} />;
+            return <MusicCard data={data} key={data.id} />;
           })
       )}
     </>

@@ -21,7 +21,7 @@ const Images = () => {
             return item.attributes.type === "image";
           })
           ?.map(item => {
-            return <ImageCard data={item} />;
+            return <ImageCard data={item} key={data.id} />;
           })
       )}
     </>
