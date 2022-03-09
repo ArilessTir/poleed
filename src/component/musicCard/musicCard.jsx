@@ -3,7 +3,6 @@ import React from "react";
 import noimg from "../../assets/images/Noimg.png";
 
 const MusicCard = ({ data }) => {
-  const url = process.env.REACT_APP_API_URL;
   const checkImage = data.attributes.image.data;
   return (
     <div>
@@ -11,7 +10,7 @@ const MusicCard = ({ data }) => {
         style={{
           backgroundImage: `url(${
             checkImage !== null
-              ? url + data?.attributes.image.data[0].attributes.url
+              ? data?.attributes.image.data[0].attributes.url
               : noimg
           })`,
           backgroundRepeat: "no-repeat",

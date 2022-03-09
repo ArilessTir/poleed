@@ -38,7 +38,7 @@ const Artiste = () => {
       <div
         className="img md:w-1/2 md:h-auto h-96"
         style={{
-          backgroundImage: `url(${process.env.REACT_APP_API_URL}${artiste?.attributes.images.data[0].attributes.url})`,
+          backgroundImage: `url(${artiste?.attributes.images.data[0].attributes.url})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center"
