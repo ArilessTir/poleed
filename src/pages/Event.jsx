@@ -35,7 +35,7 @@ const Event = () => {
       <div
         className="img md:w-1/2 md:h-auto h-96"
         style={{
-          backgroundImage: `url(${process.env.REACT_APP_API_URL}${data?.attributes.images.data[0].attributes.url})`,
+          backgroundImage: `url(${data?.attributes.images.data[0].attributes.url})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center"

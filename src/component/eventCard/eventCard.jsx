@@ -12,7 +12,7 @@ const EventCard = ({ size, classe, data, path = "" }) => {
         {" "}
         <div className="h-1/2 overflow-hidden">
           <img
-            src={`${process.env.REACT_APP_API_URL}${data?.attributes.images.data[0].attributes.formats.large.url}`}
+            src={`${data?.attributes.images.data[0].attributes.url}`}
             alt="Concert"
             className=" pt-5 rounded-xl w-full max-h-full object-cover transition-all group-hover:scale-11  "
           />
