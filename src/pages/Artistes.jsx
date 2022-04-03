@@ -31,7 +31,7 @@ const Artistes = () => {
   };
 
   return (
-    <div className="mx-5 mt-20">
+    <section className="px-5 mt-20">
       <div className="text-center py-10 font-bold text-4xl">Artistes</div>
       <div
         animate={{
@@ -58,13 +58,10 @@ const Artistes = () => {
             })}
       </div>
       <div className="w-full flex flex-col justify-center items-center">
-        <p className="md:w-2/3 text-center mb-5 max-w-5xl">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industrys standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book
+        <p className="md:w-2/3 text-center mb-5 max-w-5xl text-xl">
+          Suis les artistes poleed. Découvre les differents univers
         </p>
-        <Link to="/contact">
+        <Link to="/about">
           {" "}
           <button className=" mb-5 py-3 px-6 font-bold text-white bg-red-600 rounded-md">
             {" "}
@@ -72,7 +69,7 @@ const Artistes = () => {
           </button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

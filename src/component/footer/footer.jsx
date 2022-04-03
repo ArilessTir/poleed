@@ -33,7 +33,7 @@ const Footer = () => {
         </a>
       </div>
       <p className="text-sm py-2 text-center w-full">
-        @ Polaroid 2018 | Tout droit reservé
+        @ Polaroeed 2019 | Tout droit reservé
       </p>
     </footer>
   );
