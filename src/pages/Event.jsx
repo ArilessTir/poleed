@@ -54,7 +54,7 @@ const Event = () => {
           </h2>
         </div>
 
-        <div className="evt text-black leading-7 lg:w-2/3 mb-4">
+        <div className="evt text-black leading-7 lg:w-2/3 mb-4 text-xl">
           {data?.attributes.description}
         </div>
         <div className="evt py-6">

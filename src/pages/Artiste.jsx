@@ -33,7 +33,7 @@ const Artiste = () => {
   return (
     <section
       className="border-white max-w-10xl max-w-screen-hd  mx-auto
-      md:flex md:min-h-screen md:px-0 mt-20"
+      md:flex md:min-h-screen md:px-0 mt-20 "
     >
       <div
         className="img md:w-1/2 md:h-auto h-96"
@@ -55,7 +55,7 @@ const Artiste = () => {
           <h2 className="uppercase">{artiste?.attributes.occupation}</h2>
         </div>
 
-        <div className="art text-black leading-7 lg:w-2/3 text-lg">
+        <div className="art text-black leading-7 lg:w-2/3 text-xl">
           {artiste?.attributes.description}
         </div>
 

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
 /* ./src/index.css */
 @tailwind base;
 @tailwind components;
@@ -12,6 +12,22 @@
     .tracking-md{letter-spacing:0.1em;}
 }
 
-html{
+/* @font-face {
+    font-family: vogue;
+    src: url('./fonts/Vogue.ttf');
+} */
+
+h1, h3, h3, .service{
     font-family: 'Bebas Neue',cursive;
+    /*font-family: vogue, sans-serif;*/
+}
+
+html{
+    font-family: 'Oswald', sans-serif;
+    background-color: rgba(17, 24, 39);
+    letter-spacing: 1px;
+}
+
+section{
+    background-color: white;
 }

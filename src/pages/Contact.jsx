@@ -15,20 +15,33 @@ const Contact = () => {
   };
 
   return (
-    <body className="max-w-screen-hd mx-auto mt-20">
+    <section className="max-w-screen-hd mx-auto mt-20">
       <Notification notif={notif} />
       <h1 className="text-center py-10 font-bold text-4xl">Contact</h1>
-      <p className=" max-w-screen-2xl mx-auto text-center px-5">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis,
-        nostrum dignissimos! Ipsam, omnis sed nisi doloribus harum voluptatibus
-        autem blanditiis quibusdam amet culpa perspiciatis illo reprehenderit,
-        consectetur deleniti cum dignissimos? Suscipit, aut! Ipsa repellendus
-        mollitia harum ut amet doloremque dolores asperiores, porro nam nesciunt
-        nobis dolore sed sunt illum dolor perferendis, architecto consequuntur
-        molestiae necessitatibus cupiditate perspiciatis id itaque voluptatum.
+      <p className=" max-w-screen-xl mx-auto text-center px-5 text-xl">
+        Pour tout contact n’hesitez pas à vous rapprocher de notre compte{" "}
+        <a
+          className="font-bold underline"
+          href="https://www.instagram.com/_poleed/?hl=fr"
+          target="_blank"
+          rel="noreferrer"
+        >
+          instagram
+        </a>
+        . Pour tout devis concernant les ateliers ou la reservation du studio
+        d’enregistrement, veuillez nous addreser par{" "}
+        <a
+          className="font-bold underline"
+          href="mailto: polaroeed@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          mail
+        </a>
+        .
       </p>
 
-      <section className="py-4 items-center justify-center md:space-x-10 max-w-screen-2xl mx-auto md:flex">
+      <section className="py-4 items-center justify-center md:my-10 md:space-x-10 max-w-screen-2xl mx-auto md:flex">
         <div className=" md:pl-5 md:w-1/2">
           <iframe
             className="w-full h-80 mx-auto"
@@ -40,8 +53,8 @@ const Contact = () => {
           <h1 className="text-3xl"> Ou peux tu nous contacter? </h1>
           <div className="flex cursor-pointer items-center space-x-2 max-w-xs">
             <FiMail size={23} />
-            <a className="text-xl" href="mailto: poleed@gmail.com">
-              poleed@gmail.com
+            <a className="text-xl" href="mailto: polaroeed@gmail.com">
+              polaroeed@gmail.com
             </a>
             <FiCopy
               size={23}
@@ -49,15 +62,15 @@ const Contact = () => {
                 marginLeft: "auto"
               }}
               onClick={() => {
-                handleCopy("poleed@gmail.com");
+                handleCopy("polaroeed@gmail.com");
               }}
             />
           </div>
 
           <div className="flex cursor-pointer items-center space-x-2 max-w-xs">
             <FiPhone size={23} />
-            <a className="text-xl" href="tel:0767722371">
-              0767722371
+            <a className="text-xl" href="tel:0666189828">
+              0666189828
             </a>
             <FiCopy
               size={23}
@@ -107,7 +120,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </body>
+    </section>
   );
 };
 

@@ -1,11 +1,13 @@
 import React from "react";
 import PdfLink from "../component/pdfLink/pdfLink";
 import home_about1 from "../assets/images/home_about1.jpg";
+import adhesion from "../assets/pdf/adhesion.pdf";
+import reglement from "../assets/pdf/reglement.pdf";
 
 const About = () => {
   const tab = [
-    { id: 1, link: "../assets/pdf/test.pdf", text: "Bulletin d'adhesion" },
-    { id: 2, link: "../assets/pdf/test.pdf", text: "Charte" }
+    { id: 1, link: adhesion, text: "Bulletin d'adhesion" },
+    { id: 2, link: reglement, text: "Réglement" }
   ];
   return (
     <section className="border-white max-w-10xl max-w-screen-hd  mx-auto mt-20">
@@ -23,24 +25,28 @@ const About = () => {
         ></div>
         <div className="md:w-1/2 flex flex-col justify-between">
           <p className=" text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-            odio esse suscipit laboriosam explicabo provident pariatur
-            laudantium accusamus quia delectus deleniti sequi iure
-            necessitatibus, qui praesentium eligendi, minus obcaecati molestiae.
-            Rem, iste sint repudiandae voluptatum excepturi qui neque debitis
-            autem quaerat. Consequatur a tempora nam ullam deserunt eum ut enim
-            eos quaerat quidem placeat aliquam nemo accusamus cum, quod
+            Poleed est une association de promotion artistique Roubaisienne.
+            Elle est spécialisée dans l’accompagnement d’artiste. Elle met en
+            avant des artistes lors d’événements et en créant du contenu
+            visible. La structure s’engage sur l’accompagnement d’artistes dans
+            tous les aspects de son projet et lui offre les clefs pour gérer son
+            projet. Avec ces réalisations, (documentaire, clip, EP, single,
+            atelier) elle a pour ambition de favoriser l’accès au monde de
+            l’audiovisuel auprès des porteurs de projet. Elle croit en des
+            valeurs de soutien et de collectivité dans lesquelles les artistes
+            se reconnaissent.
             <br />
             <br />
-            praesentium? Odit et amet ipsa assumenda unde molestias obcaecati ex
-            commodi consequuntur quas! Quae corrupti quibusdam, quo ab rem
-            accusamus provident, obcaecati dignissimos itaque, vel est eos quam
-            aliquam illo ad? Rem nostrum dignissimos non adipisci, praesentium
-            qui! Veniam dignissimos culpa facere? A tenetur qui quod repudiandae
-            consequuntur eaque rem sit quia illum, dignissimos suscipit
-            temporibus distinctio nulla magnam eveniet cupiditate. aliquam illo
+            Les artistes suivis par Poleed s’intègrent dans les projets de
+            manières volontaires et bénévoles. Ils sont responsables et seuls
+            garants de l’énergie qui émanent de leur projet. Poleed est le
+            reflet de ceux qui la font briller et nikomok parmi les rallumeurs
+            d’étoiles.
           </p>
-          <div className=" flex flex-wrap space-x-4 justify-center mt-5">
+          <div
+            className="flex flex-col space-y-4 md:flex-row
+                        md:space-x-4 md:space-y-0 justify-center mt-5"
+          >
             {tab.map(link => {
               return <PdfLink link={link} />;
             })}

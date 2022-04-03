@@ -68,9 +68,9 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="font-Bebas">
+    <section className="">
       <section className="min-h-screen bg-gray-900 flex mt-20 mx-auto max-w-screen-hd">
-        <div className="w-full space-y-10  md:w-1/2 lg:1/3 lg:pl-24 pl-5 my-auto z-30 ">
+        <div className=" font-sans w-full space-y-10  md:w-1/2 lg:1/3 lg:pl-24 pl-5 my-auto z-30 ">
           <div className="title flex items-center space-x-2">
             <span className="line w-10 h-1 bg-white"></span>
             <p className="text-white">Poleed Industry</p>
@@ -139,7 +139,7 @@ const Home = () => {
               alt=""
               className="max-w-full hidden md:inline"
             />
-            <p className="text-center text-2xl md:max-w-sm md:text-left  md:mt-5">
+            <p className="text-center text-xl md:text-left lg:text-2xl  md:mt-5">
               Poleed est une association de promotion artistique Roubaisienne.
               Elle est spécialisée dans l’accompagnement d’artiste.
             </p>
@@ -230,27 +230,27 @@ const Home = () => {
           Nos services
         </h1>
         <section className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5  mx-auto max-w-5xl text-white md:grid-flow-col-dense">
-          <div className=" bg-blue-300 text-7xl md:row-start-1 md:row-end-3 md:h-96 h-64 p-2">
+          <div className="service bg-blue-300 text-7xl md:row-start-1 md:row-end-3 md:h-96 h-64 p-2">
             Studio de music
           </div>
-          <div className=" bg-gray-900 relative h-64">
+          <div className="service bg-gray-900 relative h-64">
             <p className="absolute text-9xl top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 opacity-50 font-bold">
               PO
             </p>
           </div>
-          <div className=" bg-gray-300 h-64 text-7xl md:row-start-2 md:row-end-4 md:h-96 p-2 ">
+          <div className="service bg-gray-300 h-64 text-7xl md:row-start-2 md:row-end-4 md:h-96 p-2 ">
             Aide & partage
           </div>
 
-          <div className=" bg-gray-900 relative h-64 font-bold ">
+          <div className="service bg-gray-900 relative h-64 font-bold ">
             <p className="absolute text-9xl top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 opacity-50">
               LE
             </p>
           </div>
-          <div className=" bg-red-400 h-64 text-7xl md:row-start-1 md:row-end-3 md:h-96 p-2 ">
+          <div className="service bg-red-400 h-64 text-7xl md:row-start-1 md:row-end-3 md:h-96 p-2 ">
             Figuration
           </div>
-          <div className=" bg-gray-900 relative h-64 font-bold ">
+          <div className="service bg-gray-900 relative h-64 font-bold ">
             <p className="absolute text-9xl top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 opacity-50">
               ED
             </p>
@@ -304,8 +304,7 @@ const Home = () => {
         </div>
         <div className="space-y-5 text-2xl md:max-w-3xl">
           <p>
-            Notre but principale est la promotion artistique. Pour cela nous
-            suivons des artistes dans le développement de leurs projets en
+            Suivre des artistes dans le développement de leurs projets en
             offrant un accès à la production.{" "}
           </p>
           <p>
