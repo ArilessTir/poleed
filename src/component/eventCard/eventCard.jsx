@@ -2,6 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
+import noimg from "../../assets/images/Noimg.png";
+
 const EventCard = ({ size, classe, data, path = "" }) => {
   return (
     <>
@@ -12,9 +14,13 @@ const EventCard = ({ size, classe, data, path = "" }) => {
         {" "}
         <div className="h-1/2 overflow-hidden">
           <img
-            src={`${data?.attributes.images.data[0].attributes.url}`}
+            src={`${
+              data?.attributes.images.data !== null
+                ? data?.attributes.images.data[0].attributes.url
+                : noimg
+            }`}
             alt="Concert"
-            className=" pt-5 rounded-xl w-full max-h-full object-cover transition-all group-hover:scale-11  "
+            className=" pt-5  w-full max-h-full object-cover transition-all group-hover:scale-11  "
           />
         </div>
         <div className=" h-1/2 overflow-hidden">

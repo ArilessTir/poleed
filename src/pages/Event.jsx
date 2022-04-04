@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { useParams } from "react-router-dom";
 import { get_one_event } from "../services/eventAPI";
+import noimg from "../assets/images/Noimg.png";
 
 const Event = () => {
   const { id } = useParams();
@@ -35,7 +36,11 @@ const Event = () => {
       <div
         className="img md:w-1/2 md:h-auto h-96"
         style={{
-          backgroundImage: `url(${data?.attributes.images.data[0].attributes.url})`,
+          backgroundImage: `url(${
+            data?.attributes.images.data !== null
+              ? data?.attributes.images.data[0].attributes.url
+              : noimg
+          })`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center"
