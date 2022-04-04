@@ -11,7 +11,6 @@ const Artiste = () => {
   useEffect(async () => {
     const data = await get_one_artist(id);
     setArtiste(data);
-    console.log(data);
 
     gsap.from(".art", {
       y: 50,
@@ -43,7 +42,7 @@ const Artiste = () => {
             artiste?.attributes.images.data !== null
               ? artiste?.attributes.images.data[0].attributes.url
               : noimg
-          }})`,
+          })`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center"
